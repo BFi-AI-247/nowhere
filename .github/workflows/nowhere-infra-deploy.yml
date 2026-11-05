@@ -1,0 +1,88 @@
+# Klasse: K1 · Automat ohne KI (BFi-AI-247/digifil-solutions kanon/issue-worker.md)
+# Upload des Feedback-Endpunkts nach Strato (SFTP). Löscht auf dem Server nichts.
+#   main → live: /web/nowhere/feedback.php  →  https://digifil.de/nowhere/feedback.php
+#   Daten des Endpunkts liegen in /privat/nowhere/ (außerhalb des Web-Roots), der Ordner wird angelegt.
+# Die App selbst lädt weiterhin digifil-solutions/.github/workflows/nowhere-deploy.yml hoch;
+# beide löschen nichts, darum stören sie sich nicht.
+# Vor dem Upload: php -l. Nach dem Upload: Aufruf der Adresse, erwartet wird die Abweisung
+# {"ok":false,"code":"kein-post"} – das beweist, dass PHP läuft und der Endpunkt antwortet.
+# Secrets (Werte trägt nur der Betreiber ein): DIGIFIL_SFTP_HOST/USER/PASSWORD/KNOWN_HOSTS
+# Entwurf von Infra_1; hierher gelegt auf Wort des Betreibers („put it there", 05.11.2026, 23:02).
+
+name: Deploy digifil.de/nowhere · Endpunkt · K1
+
+on:
+  push:
+    branches: [main]
+    paths: ["infra/server/feedback.php", ".github/workflows/nowhere-infra-deploy.yml"]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-nowhere-infra
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      H: ${{ secrets.DIGIFIL_SFTP_HOST }}
+      U: ${{ secrets.DIGIFIL_SFTP_USER }}
+      LFTP_PASSWORD: ${{ secrets.DIGIFIL_SFTP_PASSWORD }}
+      K: ${{ secrets.DIGIFIL_SFTP_KNOWN_HOSTS }}
+    steps:
+      - name: Welche Secrets sind da?
+        id: check
+        run: |
+          missing=""
+          [ -z "$H" ] && missing="$missing DIGIFIL_SFTP_HOST"
+          [ -z "$U" ] && missing="$missing DIGIFIL_SFTP_USER"
+          [ -z "$LFTP_PASSWORD" ] && missing="$missing DIGIFIL_SFTP_PASSWORD"
+          [ -z "$K" ] && echo "::notice::DIGIFIL_SFTP_KNOWN_HOSTS fehlt – der Server-Schlüssel wird abgefragt."
+          for n in H:DIGIFIL_SFTP_HOST U:DIGIFIL_SFTP_USER LFTP_PASSWORD:DIGIFIL_SFTP_PASSWORD K:DIGIFIL_SFTP_KNOWN_HOSTS; do
+            v="${n%%:*}"; name="${n#*:}"
+            if [ -n "${!v}" ]; then echo "::notice::vorhanden: $name"; else echo "::warning::fehlt: $name"; fi
+          done
+          if [ -n "$missing" ]; then echo "::error::Upload nicht möglich, es fehlt:$missing"; exit 1; fi
+          echo "ready=true" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/checkout@v4
+
+      - name: PHP prüfen
+        run: |
+          php -l infra/server/feedback.php || { echo "::error::feedback.php hat einen Syntaxfehler – nichts hochgeladen"; exit 1; }
+          echo "::notice::feedback.php ist syntaktisch in Ordnung"
+
+      - name: lftp und Server-Schlüssel
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          if [ -n "$K" ]; then printf '%s\n' "$K" > ~/.ssh/known_hosts
+          else ssh-keyscan -T 15 "$H" > ~/.ssh/known_hosts 2>/dev/null; fi
+          chmod 600 ~/.ssh/known_hosts
+
+      - name: Hochladen
+        run: |
+          lftp -c "
+            set sftp:connect-program 'ssh -a -x -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$HOME/.ssh/known_hosts';
+            set net:max-retries 2;
+            open --env-password -u \"$U\" sftp://$H;
+            mkdir -p -f /web/nowhere;
+            mkdir -p -f /privat/nowhere;
+            put infra/server/feedback.php -o /web/nowhere/feedback.php;
+            cls -l /web/nowhere/
+          " || { echo "::error::Hochladen per SFTP fehlgeschlagen"; exit 1; }
+          echo "::notice::Hochgeladen: https://digifil.de/nowhere/feedback.php"
+
+      - name: Antwortet der Endpunkt?
+        run: |
+          a=$(curl -sS --max-time 20 https://digifil.de/nowhere/feedback.php || true)
+          echo "Antwort: $a"
+          case "$a" in
+            *kein-post*) echo "::notice::Der Endpunkt lebt und weist ein blankes Aufrufen korrekt ab." ;;
+            *"<?php"*)   echo "::error::Die Adresse liefert Quelltext – PHP wird dort nicht ausgeführt."; exit 1 ;;
+            "")          echo "::error::Keine Antwort von https://digifil.de/nowhere/feedback.php"; exit 1 ;;
+            *)           echo "::error::Unerwartete Antwort – bitte ansehen."; exit 1 ;;
+          esac
