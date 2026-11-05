@@ -1,0 +1,66 @@
+# Klasse: K1 · Automat ohne KI (BFi-AI-247/digifil-solutions kanon/issue-worker.md)
+# Von Infra_1 hierher gelegt auf Wort des Betreibers („put it there", 05.11.2026, 23:39);
+# .github/workflows/** bleibt sein Bereich.
+#
+# Fehlersuche: Warum antwortet /web/nowhere/feedback.php mit „No input file specified.",
+# obwohl die Datei dort liegt (6035 Bytes, rw-r--r--) und PHP in /web/Digiwort/ läuft?
+# Dieser Lauf lädt eine dreizeilige probe.php hoch und vergleicht drei Ordner.
+# Er löscht nichts und ändert nichts Bestehendes – die einzige Schreibaktion ist probe.php.
+#
+# Was die Antwort bedeutet:
+#   probe.php sagt „ok"        → PHP läuft im Ordner; dann liegt es an feedback.php selbst.
+#   probe.php sagt dasselbe    → PHP läuft im Ordner nicht; der Vergleich der Ordner zeigt, was fehlt.
+#   wie feedback.php
+
+name: Nowhere · Fehlersuche PHP · K1
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    env:
+      H: ${{ secrets.DIGIFIL_SFTP_HOST }}
+      U: ${{ secrets.DIGIFIL_SFTP_USER }}
+      LFTP_PASSWORD: ${{ secrets.DIGIFIL_SFTP_PASSWORD }}
+      K: ${{ secrets.DIGIFIL_SFTP_KNOWN_HOSTS }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: lftp und Server-Schlüssel
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          if [ -n "$K" ]; then printf '%s\n' "$K" > ~/.ssh/known_hosts
+          else ssh-keyscan -T 15 "$H" > ~/.ssh/known_hosts 2>/dev/null; fi
+          chmod 600 ~/.ssh/known_hosts
+
+      - name: Probe hochladen und Ordner vergleichen
+        run: |
+          lftp -c "
+            set sftp:connect-program 'ssh -a -x -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$HOME/.ssh/known_hosts';
+            set net:max-retries 2;
+            open --env-password -u \"$U\" sftp://$H;
+            put infra/server/probe.php -o /web/nowhere/probe.php;
+            echo '--- /web (Wurzel: gibt es dort eine .htaccess?) ---';
+            cls -la /web/;
+            echo '--- /web/nowhere (hier klemmt es) ---';
+            cls -la /web/nowhere/;
+            echo '--- /web/Digiwort (hier laeuft PHP) ---';
+            cls -la /web/Digiwort/
+          " || { echo "::error::SFTP fehlgeschlagen"; exit 1; }
+
+      - name: Drei Adressen aufrufen
+        run: |
+          for u in https://digifil.de/nowhere/probe.php \
+                   https://digifil.de/nowhere/feedback.php \
+                   https://digifil.de/Digiwort/feedback.php; do
+            echo "--- $u"
+            curl -sS -i --max-time 20 "$u" 2>&1 | head -20
+            echo
+          done
+          echo "::notice::Antworten oben vergleichen – dieser Lauf ist immer gruen, er urteilt nicht."
