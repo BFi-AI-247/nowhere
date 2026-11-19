@@ -7,6 +7,17 @@ oben. Gebaut wird nichts, bis der Betreiber es sagt.
 
 ## Entscheidungen
 
+### 2026-11-19 – The project moves into the repo BFi-AI-247/nowhere (Betreiber's wording, 11:50)
+
+"Kannst Du bitte das Projekt umstellen auf der Repo Nowhere. Das haben wir irgendwie aus den Augen verloren."
+Asked before: scope "Alles, ohne Verlauf (Empfohlen)" · deploy "Ja, leg ihn dort hin (Empfohlen)" · timing "Jetzt, mit
+Nachricht an alle (Empfohlen)".
+→ The whole folder digifil-solutions/nowhere/ (state 3805d69) is this repo's root, without history (it stays private
+there). A path `nowhere/<x>` there is `<x>` here. Deploy: .github/workflows/nowhere-deploy.yml here (secrets were already
+here, Infra_1 05.11.); the workflow in digifil-solutions is removed, so only one repo uploads to /web/nowhere. It now also
+runs on technik/tests/**, konzept*.md, threads/**, autor-brief.md (my proposal of 07.11.). Role files and the Kanon stay in
+digifil-solutions; CLAUDE.md here points there. Public repo: the two start prompts no longer name the Betreiber.
+
 ### 2026-11-13 – The author test: "[object Object]" (Betreiber, 07:29)
 
 "✗ aiNoCards · HTTP 200 · 47 s · 15 Zeichen · length · [object Object]"
