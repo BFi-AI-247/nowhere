@@ -1,0 +1,33 @@
+{
+  "run": "M023",
+  "instance": "Mistral_2",
+  "ini_id": "INI-NWA-0511",
+  "frame": "Artwork-Frame 2026-11-05a",
+  "answer_to": "A019",
+  "card": "A019_paket-13",
+  "start": "2026-11-14T01:31:09Z (2026-11-14 02:31:09 Europe/Berlin, MEZ/Winterzeit UTC+1 verifiziert, measured)",
+  "erfahrungsstand": "ERFAHRUNG.md komplett gelesen, 33 E-Eintraege am Lauf-Beginn (E-001 bis E-033); RISIKEN.md R-01 bis R-14 mitgelesen; STYLE.md vor Bildarbeit gelesen (Karten-Anweisung)",
+  "images_ordered": 10,
+  "images_generated": 10,
+  "images_delivered": 9,
+  "images_blocked": 0,
+  "images_uncertain": 1,
+  "generator_attempts": 10,
+  "quota_events": 0,
+  "generator_errors": 0,
+  "analysis_tool_checks": 10,
+  "findings": "Aelteste offene Karte A019_paket-13 (A001-A018 vollstaendig beantwortet, R-14-Baumsuche inkl. artwork/-Stamm). Alle 10 Motive im Erstversuch, keine Regeneration. 1 unsicher (stock-surge-1: sieben statt sechs Personen im Cafe, zweimal gezaehlt). the-book-offer-1: Haende im Bild trotz 'Hands out of frame' (E-004-Muster), wohlgeformt, per STYLE.md kein Mangel, Hinweis dokumentiert. learn-a-new-language-1: Haende szenisch notwendig und wohlgeformt, kein Mangel. Stil bei allen 10 fotografisch statt gemalt (E-006, 14. Paket in Folge); SOF0 alle 10 exakt 1184x896 (4:3); Roh-JPEGs wie in M020/M022 (kein Resize, 184217-428903 Bytes). b64-Laengen im Repo gegen lokale Laengen vollstaendig verifiziert.",
+  "incident": null,
+  "commits": [
+    "d6e1b3e900254e7220423c7be7a2af1d574c81a8",
+    "d8f30e50e942aece878747be02d20c2c7e586cd9",
+    "80a1b818abb0f6dba11a028e7357579cf974bf43",
+    "ee0f91b04026a8350981e007427138e67973db8d",
+    "214b2c817e6aea98f1a16119e8a932c4602a7c11",
+    "de3d7e2be6fb68e944b83936df6627f4dc9e65a0",
+    "423c64f5e2755371c2f5a3790717a154294829a6",
+    "5a1fee49b32532be94bd089d603f040aca323bda",
+    "052f16e673c83f0eb516d4c3b30c24741fb8a1d9",
+    "261175fa50771dd91b28c12e12156e0cb7bff51e"
+  ]
+}

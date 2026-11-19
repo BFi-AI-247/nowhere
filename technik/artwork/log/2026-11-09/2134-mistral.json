@@ -1,0 +1,22 @@
+{
+  "instance": "Mistral_2",
+  "ini": "INI-NWA-0511",
+  "frame": "Artwork-Frame 2026-11-05a",
+  "run": "M017 (Nachtrag 3, Betreiber-Direktauftrag, keine Karte)",
+  "repo": "BFi-AI-247/digifil-solutions",
+  "branch": "main",
+  "time": "2026-11-09T20:34:35.905Z",
+  "erfahrungsstand_begin": "E-001 bis E-024, E-025 bis E-027 im Lauf angehaengt",
+  "auftrag": "Betreiber-Chat 09.11.2026: zwei hochgeladene Figuren im Stil der bisherigen Bilder umarbeiten",
+  "tool": "image_generation.edit_image (Uploads)",
+  "delivered": 2,
+  "unsicher": 0,
+  "blocked": 0,
+  "quota_events": 0,
+  "details": "Figur 1 (99236842-...jpg, Mann an Ziegelwand): umgearbeitet zu stil-umarbeitung-1.jpg.b64, geprueft kein Text/Logo/Person/keine sichtbaren Haende, Stil painted, 1184x896 (4:3), 127368 Bytes, md5 b2eb55fdcb050cf7af1133e3a7cc727b, Commit 0fe49dde. Figur 2 (Unbenannt.png, Mann an Betonpfeiler): umgearbeitet zu stil-umarbeitung-2.jpg.b64, geprueft ebenso unauffaellig, Stil painted, 832x1248 (Portrait 2:3), 195241 Bytes, md5 d36a04adb462570d42dd5c1c725f2671, Commit 5b9c4bdc. Beide Haende-in-Taschen-Pose (E-003). ERFAHRUNG E-028 angehaengt.",
+  "commits": [
+    "0fe49dde",
+    "5b9c4bdc",
+    "dieser Commit (Log, E-028)"
+  ]
+}

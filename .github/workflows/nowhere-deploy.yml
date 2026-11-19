@@ -1,0 +1,78 @@
+# Klasse: K1 · Automat ohne KI (BFi-AI-247/digifil-solutions kanon/issue-worker.md)
+# Upload von Nowhere (Übersicht, Prototypen 1–4) nach Strato (SFTP). Löscht auf dem Server nichts.
+#   main → live: /web/nowhere/  (technik/app/)  →  https://digifil.de/nowhere/
+# Vor dem Upload prüft tools/cards.py alle Karten; schlägt die Prüfung fehl, wird nichts hochgeladen.
+# Secrets (Werte trägt nur der Betreiber ein; dieselben wie bei Digiwort): DIGIFIL_SFTP_HOST/USER/PASSWORD/KNOWN_HOSTS
+# Entwurf von Spiel_2; zuerst in digifil-solutions („put it there“, 05.11.2026, 20:34); mit dem Umzug ins Repo nowhere
+# hierher gelegt auf Wort des Betreibers (19.11.2026, 11:5x: „Ja, leg ihn dort hin“). Die Secrets liegen hier seit 05.11.
+# (Infra_1, nowhere-infra-deploy.yml). Neu: auch Testprotokoll und Konzept lösen aus (Zählung der Runden).
+
+name: Deploy digifil.de/nowhere · K1
+
+on:
+  push:
+    branches: [main]
+    paths: ["technik/app/**", "karten/**", "threads/**", "autor-brief.md", "konzept*.md", "technik/tools/**", "technik/tests/**", ".github/workflows/nowhere-deploy.yml"]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-nowhere
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      H: ${{ secrets.DIGIFIL_SFTP_HOST }}
+      U: ${{ secrets.DIGIFIL_SFTP_USER }}
+      LFTP_PASSWORD: ${{ secrets.DIGIFIL_SFTP_PASSWORD }}
+      K: ${{ secrets.DIGIFIL_SFTP_KNOWN_HOSTS }}
+    steps:
+      - name: Secrets vorhanden?
+        id: check
+        run: |
+          missing=""
+          [ -z "$H" ] && missing="$missing SFTP-Host"
+          [ -z "$U" ] && missing="$missing SFTP-Benutzer"
+          [ -z "$LFTP_PASSWORD" ] && missing="$missing SFTP-Passwort"
+          if [ -n "$missing" ]; then echo "::warning::Upload übersprungen, es fehlt:$missing"; echo "ready=false" >> "$GITHUB_OUTPUT"
+          else echo "ready=true" >> "$GITHUB_OUTPUT"; fi
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Karten prüfen und cards.json bauen
+        run: |
+          python -m pip install --quiet pyyaml
+          python technik/tools/cards.py || { echo "::error::Kartenprüfung fehlgeschlagen – nichts hochgeladen"; exit 1; }
+          test -s technik/app/cards.json
+          node -e "JSON.parse(require('fs').readFileSync('technik/app/cards.json','utf8'))"
+          echo "::notice::Karten OK"
+
+      - name: lftp und Server-Schlüssel
+        if: steps.check.outputs.ready == 'true'
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          if [ -n "$K" ]; then printf '%s\n' "$K" > ~/.ssh/known_hosts
+          else echo "::notice::DIGIFIL_SFTP_KNOWN_HOSTS fehlt – Server-Schlüssel wird abgefragt."; ssh-keyscan -T 15 "$H" > ~/.ssh/known_hosts 2>/dev/null; fi
+          chmod 600 ~/.ssh/known_hosts
+
+      - name: Hochladen
+        if: steps.check.outputs.ready == 'true'
+        run: |
+          lftp -c "
+            set sftp:connect-program 'ssh -a -x -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$HOME/.ssh/known_hosts';
+            set net:max-retries 2;
+            open --env-password -u \"$U\" sftp://$H;
+            mkdir -p -f /web/nowhere;
+            mirror -R --only-newer --no-perms --exclude-glob .DS_Store technik/app /web/nowhere;
+            cls -l /web/nowhere/
+          " || { echo "::error::Hochladen per SFTP fehlgeschlagen"; exit 1; }
+          echo "::notice::Hochgeladen: https://digifil.de/nowhere/"

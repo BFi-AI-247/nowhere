@@ -1,0 +1,68 @@
+{
+  "instance": "Mistral_2",
+  "ini": "INI-NWA-0511",
+  "frame": "Artwork-Frame 2026-11-05a",
+  "repo": "BFi-AI-247/digifil-solutions",
+  "branch": "main",
+  "run": "M016",
+  "card": "A013_paket-8.md",
+  "start": "2026-11-08T01:49:17.160Z (2026-11-08, 02:49:17 Europe/Berlin, MEZ/Winterzeit UTC+1 verifiziert, gemessen am Lauf-Beginn)",
+  "end": "2026-11-08T02:01:52.265Z (2026-11-08, 03:01:52 Europe/Berlin, gemessen nach dem letzten Bild-Commit, vor den Abschluss-Commits)",
+  "erfahrungsstand_beginn": "ERFAHRUNG.md komplett gelesen, 23 Eintraege (E-001 bis E-023); RISIKEN.md R-01 bis R-14; STYLE.md gelesen",
+  "auftragswahl": {
+    "regel": "aelteste offene Karte A<NNN>_*.md, in keiner Lieferung im artwork-Baum in 'Answer to:' genannt (R-14: kompletter Baum, alle Ebenen)",
+    "beantwortet": ["A001","A002","A003","A004","A005","A006","A007","A008","A009","A010","A011","A012"],
+    "gewaehlt": "A013_paket-8.md (20 Bilder)",
+    "lieferungsnummer": "M016 (naechste freie M-Nummer am Bestand, hoechste vorhandene M015)"
+  },
+  "generator": {
+    "tool": "image_generation.generate_image",
+    "modell": "vom Werkzeug nicht gemeldet",
+    "kosten": "vom Werkzeug nicht gemeldet",
+    "aufrufe": 22,
+    "davon_regel_folgeversuche": 2,
+    "kontingent_ereignisse": 0,
+    "stille_leere_ergebnisse": 0,
+    "verweigerte_prompts": 0
+  },
+  "analyse": {
+    "tool": "uploads.analyze_image",
+    "geprueft": "Schrift/Lettering, Logo, erkennbare echte Person, zusaetzlich sichtbare Haende/Finger (E-003), Stil (R-07), Fahne",
+    "erfolgreiche_aufrufe": 20,
+    "limit": "hartes Werkzeuglimit 20 Aufrufe je Antwort; ab Aufruf 21 Meldung 'Image analysis limit of 20 calls reached for this response'",
+    "nicht_geprueft": ["the-sign-1.jpg", "the-shelter-market-1.jpg"]
+  },
+  "bilder": [
+    {"file": "ninety-days-under-1.jpg.b64", "card": "ninety-days-under", "status": "unsicher (sichtbare Hand am Panel; Folgeversuch ebenfalls Hand sichtbar)", "md5": "55383a07e33ee1cdafa13db6174ff491", "dims": "1184x896", "bytes": 355719, "gen_calls": 2, "commit": "e789fcc"},
+    {"file": "made-by-humans-1.jpg.b64", "card": "made-by-humans", "status": "delivered", "md5": "93cc0c0a3430564a428f9b84c6c8c7ca", "dims": "1184x896", "bytes": 463209, "gen_calls": 1, "commit": "bfe67a2"},
+    {"file": "eleven-days-1.jpg.b64", "card": "eleven-days", "status": "delivered", "md5": "a66a4a0ce44726de8fff5f27d60e0098", "dims": "1184x896", "bytes": 326336, "gen_calls": 1, "commit": "1611327"},
+    {"file": "the-second-cycle-1.jpg.b64", "card": "the-second-cycle", "status": "unsicher (sichtbare Hand trotz 'hands out of frame'; Folgeversuch ebenfalls)", "md5": "581a914f3809f88749bb3a15eed3d7c9", "dims": "1184x896", "bytes": 291658, "gen_calls": 2, "commit": "3afac8b"},
+    {"file": "the-blocks-know-1.jpg.b64", "card": "the-blocks-know", "status": "unsicher (sichtbare Hand an Gesicht; kein Folgeversuch, Analyse-Kontingent-Schonung)", "md5": "341b596255cdbc925ee89c8169c1e115", "dims": "1184x896", "bytes": 175403, "gen_calls": 1, "commit": "07d0798"},
+    {"file": "the-paper-1.jpg.b64", "card": "the-paper", "status": "delivered", "md5": "161f685b179a324f9d29dbb0dbfe1689", "dims": "1184x896", "bytes": 249095, "gen_calls": 1, "commit": "c43ba81"},
+    {"file": "what-it-says-1.jpg.b64", "card": "what-it-says", "status": "unsicher (sichtbare Haende an Whiteboards, szenenbedingt)", "md5": "ccba1f7896af6c4d138181d960508221", "dims": "1184x896", "bytes": 362596, "gen_calls": 1, "commit": "1081861"},
+    {"file": "the-world-hears-it-1.jpg.b64", "card": "the-world-hears-it", "status": "delivered", "md5": "962947f5161f56f313f8983662abb89d", "dims": "1184x896", "bytes": 518332, "gen_calls": 1, "commit": "221d5d5"},
+    {"file": "silence-1.jpg.b64", "card": "silence", "status": "delivered", "md5": "6dd5f0c38ad439f8e0e43e5dfea532d6", "dims": "1184x896", "bytes": 369793, "gen_calls": 1, "commit": "61a780b"},
+    {"file": "the-dish-in-the-gobi-1.jpg.b64", "card": "the-dish-in-the-gobi", "status": "delivered", "md5": "1f2fd6edcb57e02f8cab677566941f5c", "dims": "1184x896", "bytes": 486470, "gen_calls": 1, "commit": "55f0ac4"},
+    {"file": "someone-answers-1.jpg.b64", "card": "someone-answers", "status": "delivered", "md5": "adfe36328c266e3878d4bfee7b1b8c0d", "dims": "1184x896", "bytes": 296178, "gen_calls": 1, "commit": "6882128"},
+    {"file": "the-count-goes-up-1.jpg.b64", "card": "the-count-goes-up", "status": "delivered", "md5": "40bfcfdc6169b025d0ac3759af889787", "dims": "1184x896", "bytes": 241645, "gen_calls": 1, "commit": "76d1915"},
+    {"file": "the-answer-committee-1.jpg.b64", "card": "the-answer-committee", "status": "unsicher (sichtbare Haende am Tisch, szenenbedingt)", "md5": "2659aea89d5fdcd0a0e84258f8517045", "dims": "1184x896", "bytes": 236736, "gen_calls": 1, "commit": "d71d31d"},
+    {"file": "the-vote-on-the-ring-1.jpg.b64", "card": "the-vote-on-the-ring", "status": "delivered (erhobene Haende kartengemaess)", "md5": "36028a93e066a480b107c80fdd5c70d1", "dims": "1184x896", "bytes": 436100, "gen_calls": 1, "commit": "af77bc8"},
+    {"file": "the-ring-1.jpg.b64", "card": "the-ring", "status": "delivered", "md5": "1e233b040ba996c7b46eec05ffd3c464", "dims": "1184x896", "bytes": 423602, "gen_calls": 1, "commit": "7e6f9e6"},
+    {"file": "the-first-component-1.jpg.b64", "card": "the-first-component", "status": "unsicher (sichtbare Haende im Arbeiter-Ring)", "md5": "e1d7cde9c20049fbf0b33d867b73fe59", "dims": "1184x896", "bytes": 334775, "gen_calls": 1, "commit": "fa3f20b"},
+    {"file": "the-watch-1.jpg.b64", "card": "the-watch", "status": "delivered", "md5": "7807d8cabf9cb9cc6c7424663eebae1e", "dims": "1184x896", "bytes": 373588, "gen_calls": 1, "commit": "e6ca901"},
+    {"file": "the-prophet-1.jpg.b64", "card": "the-prophet", "status": "delivered (offene Arme kartengemaess)", "md5": "ec8b036c6768489ca729acffcc571406", "dims": "1184x896", "bytes": 240101, "gen_calls": 1, "commit": "62d7934"},
+    {"file": "the-sign-1.jpg.b64", "card": "the-sign", "status": "unsicher (nicht geprueft: Analyse-Werkzeug-Limit 20/20)", "md5": "b352b1f72613563fe5180a2dd795acb6", "dims": "1184x896", "bytes": 394946, "gen_calls": 1, "commit": "7712d88"},
+    {"file": "the-shelter-market-1.jpg.b64", "card": "the-shelter-market", "status": "unsicher (nicht geprueft: Analyse-Werkzeug-Limit 20/20)", "md5": "dfae95f29045125f17e0867b6557f678", "dims": "1184x896", "bytes": 356775, "gen_calls": 1, "commit": "908be4f"}
+  ],
+  "bilanz": {"delivered": 11, "unsicher": 9, "blocked": 0, "gesamt": 20},
+  "werkzeuggrenzen": [
+    "Python-Bundle/Pillow nicht verfuegbar ('Bundled Python is unavailable in this turn'), kein Resize auf 1024 px / unter 200 KB, Roh-JPEG geliefert (R-05)",
+    "uploads.analyze_image hartes Limit 20 Aufrufe je Antwort; the-sign und the-shelter-market nicht pruefbar",
+    "split unbrauchbar ('failed to write output'), tail -c +N teils falsche Bytezahl (tail -c +1 = 1 Byte); Teile per cut -c A-B | tr -d '\\n' erzeugt",
+    "TextEncoder/atob fehlen in run_typescript; SOF0-Messung per purem JS-Base64-Decoder + 0xFFC0-Markerscan (1184x896 exakt)",
+    "16-MiB-Grenze: bei einem Push (11 Teilverlesungen + Push, Bild 2) wurde das Limit NACH erfolgreichem Push beim Rueckgabebau erreicht; Commit war durch, per list_commits verifiziert",
+    "Shell-Glob-Sortierung haette Teile falsch verkettet (q10/q11 vor q2); Rejoin md5-verifiziert gegen Gesamtdatei (E-022-Verfahren)"
+  ],
+  "verifikation": "Vollverifikation des ersten Bildes (ninety-days-under-1.jpg.b64): Repo-Ruecklesung md5-identisch mit lokaler b64 (Laenge + Kopf + Schwanz), alle weiteren Bilder per Lngenabgleich vor Push + lokale Join-md5 gegen Gesamtdatei",
+  "commits": "20 Bild-Commits (e789fcc bis 908be4f) plus Abschluss-Commits (Lieferung + Log, ERFAHRUNG), alle 'M016: A013', Instanz: Mistral_2"
+}

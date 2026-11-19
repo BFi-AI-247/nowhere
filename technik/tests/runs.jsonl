@@ -1,0 +1,77 @@
+{"at":"2026-11-07T18:10:00Z","prototype":1,"kind":"sim","rounds":240,"ok":true,"backfill":true,"note":"05.–07.11., before the ledger: 8 runs of 30 games, counted afterwards from Spiel_2's chat – approximate"}
+{"at":"2026-11-07T18:10:00Z","prototype":1,"kind":"browser","rounds":10,"ok":true,"backfill":true,"note":"browser click-throughs before the ledger – approximate"}
+{"at":"2026-11-07T18:10:00Z","prototype":2,"kind":"sim","rounds":385,"ok":true,"backfill":true,"note":"07.11., before the ledger: sim2 runs and two 80-year beat checks, counted afterwards – approximate"}
+{"at":"2026-11-07T18:10:00Z","prototype":2,"kind":"browser","rounds":12,"ok":true,"backfill":true,"note":"browser click-throughs (14 weeks each) before the ledger – approximate"}
+{"at":"2026-11-07T18:10:00Z","prototype":3,"kind":"sim","rounds":65,"ok":true,"backfill":true,"note":"07.11., before the ledger: sim3 runs, counted afterwards – approximate"}
+{"at":"2026-11-07T18:10:00Z","prototype":3,"kind":"browser","rounds":3,"ok":true,"backfill":true,"note":"browser click-throughs before the ledger – approximate"}
+{"at":"2026-11-07T18:12:22.667Z","prototype":1,"kind":"sim","rounds":20,"ok":true}
+{"at":"2026-11-07T18:12:23.331Z","prototype":2,"kind":"sim","rounds":20,"ok":true}
+{"at":"2026-11-07T18:12:24.151Z","prototype":3,"kind":"sim","rounds":20,"ok":true}
+{"at":"2026-11-07T20:48:40.845Z","prototype":3,"kind":"sim","rounds":40,"ok":true}
+{"at":"2026-11-07T20:48:41.976Z","prototype":3,"kind":"sim-mock","rounds":20,"ok":true}
+{"at":"2026-11-07T20:49:14.108Z","prototype":3,"kind":"sim-mock","rounds":20,"ok":true}
+{"at":"2026-11-07T20:49:26.991Z","prototype":3,"kind":"sim","rounds":20,"ok":true}
+{"at":"2026-11-07T20:49:27.363Z","prototype":2,"kind":"sim","rounds":10,"ok":true}
+{"at":"2026-11-07T20:49:27.590Z","prototype":1,"kind":"sim","rounds":10,"ok":true}
+{"at":"2026-11-07T22:19:50.467Z","prototype":3,"kind":"sim","rounds":40,"ok":true}
+{"at":"2026-11-07T22:19:52.708Z","prototype":3,"kind":"sim-mock","rounds":20,"ok":true}
+{"at":"2026-11-07T22:21:24.098Z","prototype":2,"kind":"sim","rounds":10,"ok":true}
+{"at":"2026-11-07T22:21:24.275Z","prototype":1,"kind":"sim","rounds":10,"ok":true}
+{"at":"2026-11-08T18:41:32.892Z","prototype":4,"kind":"sim","rounds":20,"ok":true}
+{"at":"2026-11-08T18:42:40.489Z","prototype":4,"kind":"sim","rounds":50,"ok":true}
+{"at":"2026-11-08T18:42:41.748Z","prototype":4,"kind":"sim","rounds":20,"ok":true}
+{"at":"2026-11-08T18:42:55.396Z","prototype":4,"kind":"sim","rounds":20,"ok":true}
+{"at":"2026-11-08T18:43:19.493Z","prototype":4,"kind":"sim-mock","rounds":10,"ok":true}
+{"at":"2026-11-08T18:45:14.058Z","prototype":4,"kind":"sim","rounds":20,"ok":true}
+{"at":"2026-11-08T18:46:06.004Z","prototype":1,"kind":"sim","rounds":10,"ok":true}
+{"at":"2026-11-08T18:46:06.601Z","prototype":2,"kind":"sim","rounds":10,"ok":true}
+{"at":"2026-11-08T18:46:07.300Z","prototype":3,"kind":"sim","rounds":10,"ok":true}
+{"at":"2026-11-08T18:46:08.702Z","prototype":4,"kind":"sim","rounds":20,"ok":true}
+{"at":"2026-11-08T18:46:10.398Z","prototype":4,"kind":"sim-mock","rounds":10,"ok":true}
+{"at":"2026-11-08T18:46:45.087Z","prototype":4,"kind":"browser","rounds":1,"ok":true,"note":"P4 smoke: check roll, weave view, year 1 to the end, year 2 started"}
+{"at":"2026-11-08T19:18:35.188Z","prototype":4,"kind":"sim","rounds":10,"ok":true}
+{"at":"2026-11-08T19:18:53.587Z","prototype":4,"kind":"sim","rounds":10,"ok":true}
+{"at":"2026-11-08T20:03:48.438Z","prototype":4,"kind":"sim-mock","rounds":10,"ok":true}
+{"at":"2026-11-08T20:04:01.256Z","prototype":4,"kind":"sim","rounds":10,"ok":true}
+{"at":"2026-11-08T20:04:30.972Z","prototype":4,"kind":"sim-mock","rounds":10,"ok":true}
+{"at":"2026-11-08T20:07:07.685Z","prototype":2,"kind":"sim","rounds":10,"ok":true}
+{"at":"2026-11-08T20:07:08.340Z","prototype":3,"kind":"sim","rounds":10,"ok":true}
+{"at":"2026-11-08T20:07:09.912Z","prototype":4,"kind":"sim","rounds":20,"ok":true}
+{"at":"2026-11-08T20:07:11.264Z","prototype":4,"kind":"sim-mock","rounds":10,"ok":true}
+{"at":"2026-11-08T20:07:23.296Z","prototype":4,"kind":"browser","rounds":1,"ok":true,"note":"P4: who sheet with skills, team swap, background author unit test"}
+{"at":"2026-11-09T20:13:57.650Z","prototype":4,"kind":"sim","rounds":20,"ok":true}
+{"at":"2026-11-09T20:13:58.928Z","prototype":4,"kind":"sim-mock","rounds":10,"ok":true}
+{"at":"2026-11-09T20:14:11.567Z","prototype":3,"kind":"sim","rounds":10,"ok":true}
+{"at":"2026-11-09T20:43:45.791Z","prototype":4,"kind":"sim","rounds":10,"ok":true}
+{"at":"2026-11-09T21:14:49.205Z","prototype":4,"kind":"sim","rounds":10,"ok":true}
+{"at":"2026-11-09T21:14:49.232Z","prototype":4,"kind":"browser","rounds":1,"ok":true,"note":"P4: week report, compact tiles"}
+{"at":"2026-11-10T05:38:05.076Z","prototype":4,"kind":"sim","rounds":10,"ok":true}
+{"at":"2026-11-10T05:38:21.529Z","prototype":4,"kind":"sim-mock","rounds":10,"ok":true}
+{"at":"2026-11-10T05:38:34.123Z","prototype":4,"kind":"sim","rounds":10,"ok":true}
+{"at":"2026-11-10T05:39:01.961Z","prototype":3,"kind":"sim","rounds":5,"ok":true}
+{"at":"2026-11-10T10:01:21.580Z","prototype":4,"kind":"sim-mock","rounds":10,"ok":true}
+{"at":"2026-11-10T10:01:34.348Z","prototype":4,"kind":"sim","rounds":10,"ok":true}
+{"at":"2026-11-10T14:55:28.390Z","prototype":4,"kind":"sim","rounds":20,"ok":true}
+{"at":"2026-11-10T14:55:29.819Z","prototype":4,"kind":"sim-mock","rounds":10,"ok":true}
+{"at":"2026-11-10T14:55:42.161Z","prototype":3,"kind":"sim","rounds":5,"ok":true}
+{"at":"2026-11-10T14:57:29.592Z","prototype":4,"kind":"sim","rounds":20,"ok":true}
+{"at":"2026-11-10T14:57:31.169Z","prototype":4,"kind":"sim-mock","rounds":10,"ok":true}
+{"at":"2026-11-10T14:57:43.511Z","prototype":3,"kind":"sim","rounds":5,"ok":true}
+{"at":"2026-11-10T14:57:43.544Z","prototype":4,"kind":"browser","rounds":1,"ok":true,"note":"P4: household, income report, people tab"}
+{"at":"2026-11-11T05:08:26.699Z","prototype":4,"kind":"sim","rounds":30,"ok":true}
+{"at":"2026-11-12T21:08:10.938Z","prototype":4,"kind":"sim-mock","rounds":10,"ok":true}
+{"at":"2026-11-12T21:08:24.102Z","prototype":4,"kind":"sim","rounds":20,"ok":true}
+{"at":"2026-11-12T21:10:11.546Z","prototype":4,"kind":"sim","rounds":20,"ok":true}
+{"at":"2026-11-12T21:10:13.111Z","prototype":4,"kind":"sim-mock","rounds":10,"ok":true}
+{"at":"2026-11-12T21:10:25.140Z","prototype":4,"kind":"browser","rounds":1,"ok":true,"note":"P4: thread tags, thread sheet"}
+{"at":"2026-11-13T05:50:12.021Z","prototype":4,"kind":"sim-mock","rounds":10,"ok":true}
+{"at":"2026-11-13T05:50:24.839Z","prototype":4,"kind":"sim","rounds":10,"ok":true}
+{"at":"2026-11-13T05:51:13.856Z","prototype":4,"kind":"sim","rounds":14,"ok":true}
+{"at":"2026-11-13T05:51:15.098Z","prototype":4,"kind":"sim","rounds":14,"ok":true}
+{"at":"2026-11-13T05:51:23.813Z","prototype":4,"kind":"sim","rounds":20,"ok":true}
+{"at":"2026-11-13T05:51:25.646Z","prototype":4,"kind":"sim-mock","rounds":10,"ok":true}
+{"at":"2026-11-13T05:51:37.990Z","prototype":3,"kind":"sim","rounds":5,"ok":true}
+{"at":"2026-11-13T06:30:22.108Z","prototype":4,"kind":"sim-mock","rounds":5,"ok":true}
+{"at":"2026-11-15T06:26:28.965Z","prototype":4,"kind":"sim","rounds":6,"ok":true}
+{"at":"2026-11-19T11:41:37.075Z","prototype":4,"kind":"sim","rounds":5,"ok":true}
+{"at":"2026-11-19T11:41:37.430Z","prototype":3,"kind":"sim","rounds":3,"ok":true}

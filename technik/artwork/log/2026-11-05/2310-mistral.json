@@ -1,0 +1,40 @@
+{
+  "instance": "Mistral_2",
+  "ini": "INI-NWA-0511",
+  "frame": "Artwork-Frame 2026-11-05a",
+  "repo": "BFi-AI-247/digifil-solutions",
+  "branch": "main",
+  "start": "2026-11-05T22:10:35Z",
+  "start_local": "2026-11-05, 23:10:35 Europe/Berlin (CET, Winterzeit verifiziert)",
+  "end": "2026-11-05T22:11:46.493Z",
+  "erfahrung_vor_lauf": "1 Eintrag (E-001)",
+  "karte": "A002_style-test-base64.md",
+  "karte_gewaehlt_weil": "aelteste offene Karte (A001 durch M001 beantwortet, A002 noch in keiner 'Answer to'-Zeile genannt)",
+  "regeneration": "nein, Bilder aus M001 wiederverwendet (Kartenregel)",
+  "verarbeitung": "Resize auf 1024 px Breite (Original 1184x896), JPEG q80, Pillow aus data-analysis-Bundle (bundled python.zip)",
+  "bilder": [
+    {
+      "file": "mara-lindqvist-1.b64",
+      "bytes_raw": 84618,
+      "sha256_raw": "d06c70d170efe64c2fefd3c05f9bfa6ea4973865f7aebdcb1412699cb74c303c",
+      "width_x_height": "1024x775",
+      "status": "delivered"
+    },
+    {
+      "file": "aisha-benali-1.b64",
+      "bytes_raw": 112779,
+      "sha256_raw": "66b1da2cc13058901340fc9c597b20614eaf283fc5a9175c63435751c6526e4f",
+      "width_x_height": "1024x775",
+      "status": "delivered"
+    },
+    {
+      "file": "tomas-reyes-1.b64",
+      "bytes_raw": 100615,
+      "sha256_raw": "80d7796059f6dc366cb46049434396b470fee8e6e53dcc53f2cd05e49b8d7393",
+      "width_x_height": "1024x775",
+      "status": "delivered"
+    }
+  ],
+  "ergebnis": "delivered",
+  "lieferung": "nowhere/technik/artwork/eingang/M002_A002.md"
+}

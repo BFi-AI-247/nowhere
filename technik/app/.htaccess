@@ -1,0 +1,8 @@
+AddType application/manifest+json .webmanifest
+AddType image/svg+xml .svg
+AddType application/json .json
+# every page, script and data file is checked with the server on each load – the prototypes change several times a day
+# (Betreiber 08.11., 20:48: "the overview page is not updating"). Pictures may be cached.
+<FilesMatch "\.(html|js|css|json|webmanifest)$">
+  Header set Cache-Control "no-cache"
+</FilesMatch>

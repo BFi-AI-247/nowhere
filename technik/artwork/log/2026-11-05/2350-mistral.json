@@ -1,0 +1,115 @@
+{
+  "run": "M005",
+  "instance": "Mistral_2",
+  "card": "A005",
+  "started": "2026-11-05T23:50:50+01:00",
+  "finished": "2026-11-06T00:20:00+01:00",
+  "card_file": "nowhere/technik/artwork/auftraege/A005_paket-2.md",
+  "delivery_file": "nowhere/technik/artwork/M005_A005.md",
+  "style_read": true,
+  "erfahrung_read": true,
+  "images": [
+    {
+      "file": "amara-diallo-1",
+      "uri": "gen-image://8e2313b5",
+      "status": "delivered",
+      "bytes_raw": 103187,
+      "sha256_raw": "81b5caf71e7a5738a80ed524d7f853548b2ecf94e9ebec63e80fb30f6cacbbfa",
+      "width_x_height": "1024x775",
+      "attempts": 1,
+      "style": "painterly"
+    },
+    {
+      "file": "chen-wei-1",
+      "uri": "gen-image://a8596122",
+      "status": "delivered",
+      "bytes_raw": 116906,
+      "sha256_raw": "85aa526f614dde7fe60ace6ef046073af4b1ef5e75e6891e9165655d71d99dea",
+      "width_x_height": "1024x775",
+      "attempts": 1,
+      "style": "photographic (E-006)"
+    },
+    {
+      "file": "ines-koller-1",
+      "uri": "gen-image://8807690e",
+      "status": "delivered",
+      "bytes_raw": 91710,
+      "sha256_raw": "f4ac823234d108b80afce68577fda1f415b4628ca5fec00a853846c55b5fed66",
+      "width_x_height": "1024x775",
+      "attempts": 1,
+      "style": "photographic (E-006)"
+    },
+    {
+      "file": "james-whitfield-1",
+      "uri": "gen-image://466237b0",
+      "status": "delivered",
+      "bytes_raw": 86114,
+      "sha256_raw": "9004066a2006f8987dae7cd7a1e9700f8403c3425992b3052d3839359a9d02cf",
+      "width_x_height": "1024x775",
+      "attempts": 1,
+      "style": "photographic (E-006)"
+    },
+    {
+      "file": "jonas-weber-1",
+      "uri": "gen-image://1fd34cff",
+      "status": "unsicher (sichtbare wohlgeformte Haende)",
+      "bytes_raw": 125102,
+      "sha256_raw": "edde526daa5d1bc5918ba66d4d7ef9594380dadf281fbe9998d9c32225c72947",
+      "width_x_height": "1024x775",
+      "attempts": 1,
+      "style": "photographic (E-006)"
+    },
+    {
+      "file": "marta-kowalska-1",
+      "uri": "gen-image://81cd7501",
+      "status": "delivered",
+      "bytes_raw": 127529,
+      "sha256_raw": "afeb198aa06ec5bcb5d22f75555c50d59071e58b8ea437d58c903ea72fe5b132",
+      "width_x_height": "1024x775",
+      "attempts": 1,
+      "style": "photographic (E-006)"
+    },
+    {
+      "file": "meera-iyer-1",
+      "uri": "gen-image://740661b3",
+      "status": "delivered",
+      "bytes_raw": 108378,
+      "sha256_raw": "83498849160bbdc16534243141994aec042ebc3da1db3e1668351abb215aac0b",
+      "width_x_height": "1024x775",
+      "attempts": 1,
+      "style": "photographic (E-006)"
+    },
+    {
+      "file": "nadia-fall-1",
+      "uri": "gen-image://c2ac46a4",
+      "status": "delivered",
+      "bytes_raw": 106236,
+      "sha256_raw": "74e870d7e11cca5e181da9235a52f07f1c22b5e6a7e5e5f1482639d91f7eb655",
+      "width_x_height": "1024x775",
+      "attempts": 1,
+      "style": "painterly"
+    },
+    {
+      "file": "oskar-lind-1",
+      "status": "blocked",
+      "reason": "image generation quota exceeded (429), reset 2026-11-06T00:59:42Z"
+    },
+    {
+      "file": "tomasz-wiek-1",
+      "status": "blocked",
+      "reason": "image generation quota exceeded (429), reset 2026-11-06T00:59:42Z"
+    },
+    {
+      "file": "viktor-sokolov-1",
+      "status": "blocked",
+      "reason": "image generation quota exceeded (429), reset 2026-11-06T00:59:42Z"
+    }
+  ],
+  "commits": [
+    "c75e54d",
+    "99ebf3d",
+    "cfdaa2d"
+  ],
+  "tool_model": "not reported",
+  "cost": "not reported"
+}

@@ -1,0 +1,29 @@
+{
+  "instance": "Mistral_2",
+  "ini": "INI-NWA-0511",
+  "frame": "Artwork-Frame 2026-11-05a",
+  "repo": "BFi-AI-247/digifil-solutions",
+  "branch": "main",
+  "start": "2026-11-05T22:27:34Z",
+  "start_local": "2026-11-05, 23:27:34 Europe/Berlin (CET, Winterzeit verifiziert)",
+  "end": "2026-11-05T22:30:37.000Z",
+  "erfahrung_vor_lauf": "3 Eintraege (E-001 bis E-003)",
+  "style_gelesen": "nowhere/technik/artwork/STYLE.md",
+  "karte": "A003_paket-1.md",
+  "karte_gewaehlt_weil": "aelteste offene Karte (A001, A002 beantwortet; A003 in keiner 'Answer to'-Zeile genannt)",
+  "verarbeitung": "Resize auf 1024 px Breite (Original 1184x896), JPEG q80, Pillow aus data-analysis-Bundle (bundled python.zip), Base64 je 76 Zeichen pro Zeile",
+  "generierungsversuche": {
+    "tomas-reyes-2": 1,
+    "samir-haddad-1": 4,
+    "elena-rossi-1": 1,
+    "leo-brandt-1": 1,
+    "sofia-marin-1": 1,
+    "yusuf-demir-1": 3,
+    "hanna-vogt-1": 2,
+    "arjun-nair-1": 1,
+    "priya-raman-1": 1,
+    "david-okoro-1": 1
+  },
+  "ergebnis": "8 delivered, 2 unsicher (sichtbare Finger, s. ERFAHRUNG E-004)",
+  "lieferung": "nowhere/technik/artwork/eingang/M003_A003.md"
+}

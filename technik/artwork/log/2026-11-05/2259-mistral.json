@@ -1,0 +1,40 @@
+{
+  "instance": "Mistral_2",
+  "ini": "INI-NWA-0511",
+  "frame": "Artwork-Frame 2026-11-05a",
+  "repo": "BFi-AI-247/digifil-solutions",
+  "branch": "main",
+  "start": "2026-11-05T21:59:20Z",
+  "start_local": "2026-11-05, 22:59:20 Europe/Berlin (CET, Winterzeit verifiziert)",
+  "end": "2026-11-05T22:05:23.478Z",
+  "end_local": "5.11.2026, 23:05:23",
+  "erfahrung_vor_lauf": "ERFAHRUNG.md nicht vorhanden, 0 Eintraege",
+  "karte": "A001_style-test.md",
+  "karte_gewaehlt_weil": "einzige und aelteste offene Karte, in keiner Lieferung als 'Answer to' genannt (eingang/ existierte nicht)",
+  "bilder": [
+    {
+      "file_card": "mara-lindqvist-1.png",
+      "generiert": true,
+      "pruefung": "kein Text, kein Logo, keine erkennbare reale Person",
+      "commit": "blocked",
+      "grund": "Binär-Commit nicht verlustfrei möglich (UTF-8-Kodierung), Generator liefert nur JPG"
+    },
+    {
+      "file_card": "aisha-benali-1.png",
+      "generiert": true,
+      "pruefung": "kein Text, kein Logo, keine erkennbare reale Person",
+      "commit": "blocked",
+      "grund": "Binär-Commit nicht verlustfrei möglich (UTF-8-Kodierung), Generator liefert nur JPG"
+    },
+    {
+      "file_card": "tomas-reyes-1.png",
+      "generiert": true,
+      "pruefung": "kein Text, kein Logo, keine erkennbare reale Person",
+      "commit": "blocked",
+      "grund": "Binär-Commit nicht verlustfrei möglich (UTF-8-Kodierung), Generator liefert nur JPG"
+    }
+  ],
+  "ergebnis": "blocked",
+  "binary_test": "Testdatei mit Bytes 0-255 (x2, 512 Bytes) gepusht, 768 Bytes im Repo angekommen (UTF-8-Multibyte), Testdatei geloescht",
+  "lieferung": "nowhere/technik/artwork/eingang/M001_A001.md"
+}

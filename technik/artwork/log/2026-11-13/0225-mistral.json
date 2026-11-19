@@ -1,0 +1,33 @@
+{
+  "run": "M022",
+  "instance": "Mistral_2",
+  "ini_id": "INI-NWA-0511",
+  "frame": "Artwork-Frame 2026-11-05a",
+  "answer_to": "A018",
+  "card": "A018_paket-12",
+  "start": "2026-11-13T01:25:20Z (2026-11-13 02:25:20 Europe/Berlin, MEZ/Winterzeit UTC+1 verifiziert, measured)",
+  "erfahrungsstand": "ERFAHRUNG.md komplett gelesen, 32 E-Eintraege am Lauf-Beginn (E-001 bis E-032); RISIKEN.md mitgelesen (gelesen); STYLE.md vor Bildarbeit gelesen (Karten-Anweisung)",
+  "images_ordered": 10,
+  "images_generated": 10,
+  "images_delivered": 9,
+  "images_blocked": 0,
+  "images_uncertain": 1,
+  "generator_attempts": 11,
+  "quota_events": 0,
+  "generator_errors": 0,
+  "analysis_tool_checks": 13,
+  "findings": "Aelteste offene Karte A018_paket-12 (A001-A017 vollstaendig beantwortet, E-032-Leerlauf M021 davor). 10 Motive geliefert, davon 1 unsicher (a-night-at-the-estate-1: acht statt neun Personen, zweimal gezaehlt). a-friend-needs-money-1: 1 Regel-Folgeversuch wegen unlesbarem Text auf Monitor im Hintergrund, Regeneration sauber. Stil erneut fotografisch statt gemalt (E-006, 13. Paket in Folge); SOF0 alle 10 exakt 1184x896 (4:3); Roh-JPEGs wie in M020 (kein Resize). b64-Laengen gegen ceil(bytes/3)*4 je Push verifiziert.",
+  "incident": null,
+  "commits": [
+    "23d4c5fc92d7456fc0ba618d33ff1301a3e448c3",
+    "f32b5848087e2fa4fe4af5e90270943cb68d028f",
+    "b8937958a7ad0056b5f45645aaade0c6992d4f6b",
+    "a712d0368210a8b87e26e83541379e86ced8fce8",
+    "37b18241cdbacb5c3b91df728276077d2f5607bc",
+    "329aff46182c8e5e34b6735984730ff943ffccd3",
+    "b86f800cd6e43b95860ff9ce9c08b59ad64115b3",
+    "30b10265e37e6a27805ae2a2f6a1e67316831033",
+    "2134cef996e9e8299ea1c9ee7564191b6c861a9e",
+    "32f4eae9b16a497eb07c3f63cfe91b2abd25ef21"
+  ]
+}

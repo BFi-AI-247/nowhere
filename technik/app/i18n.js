@@ -1,0 +1,203 @@
+// Nowhere – two languages. English is the game's language, German its first foreign language (concept, 16:29).
+// UI texts here; card texts come from the card file (title_de, text_de, back after "--- de ---"), English as fallback.
+// Classic script, loaded after engine.js. Owner: Spiel_2.
+
+let LANG = 'en';
+const LANG_KEY = 'nowhere.lang';
+function langLoad() {
+  let l = null;
+  try { l = localStorage.getItem(LANG_KEY); } catch (e) { /* no storage */ }
+  if (!l) l = (navigator.language || 'en').toLowerCase().startsWith('de') ? 'de' : 'en';
+  LANG = l === 'de' ? 'de' : 'en';
+  document.documentElement.lang = LANG;
+}
+function langSet(l) { LANG = l === 'de' ? 'de' : 'en'; document.documentElement.lang = LANG; try { localStorage.setItem(LANG_KEY, LANG); } catch (e) { /* ignore */ } }
+
+const UI = {
+  en: {
+    p3: 'Prototype 3', p4: 'Prototype 4', aiMissed: 'your AI missed a week', goal: 'Goal', goalToday: 'Today’s goal', goalReached: 'goal reached', goalMissed: 'goal missed',
+    out_success: 'success', out_partial: 'partly', out_failure: 'failed', oddsLikely: 'likely', oddsEven: 'even chance', oddsLong: 'long shot',
+    learned: '{who} learned: {skill} {from} → {to}', noRoom: '{who}: no room for {t} (three traits at most)',
+    takeIntoTeam: 'Take {name} into the team',
+    whoProf: 'your {p}', awayTil: 'away until wk {week}', noRes: 'no resource', nobodyInTeam: 'no {p} in your team',
+    youAwayShort: 'Away until week {week} · {place} · {title}',
+    youAway: 'You are away until week {week}: “{title}”, {place}. Your team can still act.', sureAway: '{who} will be away until week {week}. Go?',
+    intoTeamNow: 'Into the team',
+    dismiss: 'To contacts', dismissed: '{name} is a contact again', recruit: 'Into the team · {n} influence', recruited: '{name} joins in week {week}',
+    teamFull: 'team full (3)', needInfluence: 'needs {n} influence', seats: '{n} of {max} seats', joinsIn: 'joins in week {week}',
+    teamHint: 'Take a contact into your team: {n} influence, there next week. Send someone back to the contacts at any time they are not away.',
+    happening: 'Happening now',
+    aiTitle: 'Your AI – the author', aiConnected: 'connected', aiOwn: 'your AI writes', aiNone: 'rules write · connect your AI',
+    aiIntro: 'Connect your own AI and it writes your weeks from what you did. Without an AI, rules write the week.',
+    aiPrivacy: 'Your key stays on this device, encrypted, and goes only to the provider you chose. Costs, if any, are between you and your provider.',
+    aiOther: 'Other', aiOrSignIn: 'Sign in with OpenRouter', aiOrNote: 'You go to OpenRouter and come back with your own key. The account is free; free models cost nothing.',
+    aiModelFree: 'Model (free ones first)', aiLoadingModels: 'Loading models…', aiTest: 'Test', aiRemove: 'Remove key', aiRemoved: 'Key removed.',
+    aiGetKey: 'Get a key at {name}', aiLocalNote: 'Runs on your computer, no key. Allow requests from {origin} (Ollama: OLLAMA_ORIGINS).',
+    aiAddress: 'Address', aiModel: 'Model', aiKey: 'Key', aiKeySaved: '•••• saved', aiKeyNone: 'no key needed', aiSaveTest: 'Save and test',
+    aiTesting: 'Asking your AI…', aiCancelled: 'Cancelled.', aiUnreachable: 'Not reachable – check the address; local services must allow browser requests (CORS).',
+    aiKeyRejected: 'Key rejected – check it or connect again.', aiQuota: 'Your AI quota is used up for now.', aiNoCredit: 'No credit left at your provider – pick a free model.',
+    aiUseRules: 'Rules this week', aiFellBack: 'rules wrote the week: ', aiSlow: 'your AI took too long', aiNoCards: 'your AI sent no cards',
+    orConnected: 'OpenRouter connected', orFailed: 'OpenRouter sign-in failed', orMismatch: 'OpenRouter sign-in did not match – connect again',
+    p2: 'Prototype 2', week: 'Week', weekShort: 'Wk', monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+    pickCharacter: 'Choose who you are', authorWriting: 'The author is writing the week…', nAway: '{n} away', allHome: 'Everyone is here',
+    nextWeek: 'Next week', whoAreYou: 'Who are you?', home: 'Home', noTime: 'no time', oneWeek: '1 week', nWeeks: '{n} weeks',
+    whoSelf: 'only you', whoAnyone: 'you or your team', whoPair: 'you + one of your team', resource: 'Resource', tab_board: 'Board', tab_team: 'Team', tab_story: 'Story',
+    boardEmpty: 'Nothing on the board. Press “Next week”.', forYou: 'For you', travelWeek: '+1 week travel', oneResource: '1 resource',
+    noResource: 'no resource', new: 'new', byAuthor: 'written by the author', lastWeek: 'last week', weeksLeft: '{n} weeks left',
+    nobodyFree: 'nobody free', letPass: 'Let it pass', isGone: '{who} gone until week {week}', you: 'you', atPlace: 'in {place}',
+    onUntil: '“{title}” until week {week}', free: 'free', yourTeam: 'Your team', possessions: 'Possessions', character: 'Character',
+    whoGoes: 'Who goes?', backIn: 'back in week {week}', incTravel: 'incl. travel', rightNow: 'right now', isAway: 'away',
+    noResourceLeft: 'no resource left', aboutP2: 'Time flow: weeks, your people, an open board. {n} cards. Author: {author}.',
+    authorRules: 'rules (no AI yet)', toP1: 'Prototype 1 (months)', toHub: 'All prototypes', ifSuccess: 'if it works:', bestChance: 'best chance', teamFullSwap: 'team full – choose who goes', swapTitle: 'Who makes room for {name}?', swapHint: 'The one who goes stays a contact.', letGoName: 'Let {name} go', thrEndedWith: 'ended with: {ending}', aiAuthorTest: 'Test the author', aiAuthorTesting: 'The author writes … (up to 3 minutes)', aiAuthorTestOk: 'readable – {n} cards', aiTestNeedsGame: 'start a game first – the test uses its state', chars: 'characters', aiSalvaged: 'saved from a cut-off answer', aiUnreadable: 'answer unreadable (aiNoCards)', travelShort: 'travel', threadWord: 'Thread', part_opens: 'opens', part_continues: 'goes on', part_turns: 'turns', part_closes: 'ends', thrDue: 'due – its next card is coming', thrClosedIn: 'closed in week {week}', thrEndings: 'How it can end', thrTaken: 'Cards taken', tab_people: 'People', household: 'Household', mate: 'partner', child: 'child', ageN: '{n} years', backFrom: 'back from {place}', swapCost: 'Costs {n} influence (you have {have})', swapped: '{out} goes back to the contacts, {name} joins in week {week}', aiWritingWeek: 'writing week {n} …', aiReadyWeek: 'week {n} is ready', view_weeks: 'Weeks', view_threads: 'Threads', noThreads: 'No thread yet – take a card and its thread begins.', weaveHint: 'Tap a knot.', thrClosed: 'closed', thrFaded: 'faded', thrOpen: 'open, {n} taken', thrMet: 'met', nextYearTitle: 'Year {n}', nextYear: 'Next year', yearN: 'year {n}', out_strong: 'strong success', vs: 'vs', advantage: 'advantage', disadvantage: 'disadvantage', fumble: 'a natural 1', pushRoll: 'Push – one energy of {who}', rollGo: 'On', pushedFrom: 'pushed, first {out}', level: 'level', help: 'help', profession: 'profession', storyLine: 'Story-line', goalThisYear: 'Your goal this year:', goalGo: 'Start the year', goalDone: 'done', goalNotYet: 'not yet',
+    measure_money: 'Money', measure_influence: 'Influence', measure_possessions: 'Things you own', measure_contacts: 'Contacts', measure_team: 'Your team (you included)', measure_personal: 'Personal cards played',
+    measureHow_money: 'Rises with cards that pay, falls with what you spend.', measureHow_influence: 'Rises with cards that win people over, falls when you spend it (contacts, team).',
+    measureHow_status: 'Standing in your block: rises when you act for the block, falls when you take money against it.', measureHow_possessions: 'Rises when you acquire something (a card of a thing: keep it).',
+    measureHow_contacts: 'Rises when you keep a person as a contact.', measureHow_team: 'You and your associates; recruit a contact into the team.', measureHow_personal: 'Every card from “For you” you take counts.',
+    measureHow_flag: 'Comes from one decision in the story-line – you will know it when you see it.', isBack: '{who} back from “{title}”', weekStarts: 'Week {n}',
+    fbQuestion: 'Did this card work for you?', fbUp: 'Good card', fbDown: 'Bad card', fbSayMore: 'Say more (optional)',
+    fbThanks: 'Thank you', fbVoted: 'you rated this card', fbWait: 'One moment, please.', fbEnough: 'Enough collected for today.',
+    fbFailed: 'That did not work.', fbOffline: 'No connection – try later.', cardsVersion: 'cards {v}',
+    month: 'Month', of: 'of', draw: 'draw', draws: 'draws', money: 'money', influence: 'influence', status: 'status',
+    menu: 'Menu', play: 'Play', swipeChoose: 'Swipe up or down to choose', yearOver: 'The year is over',
+    backToEvent: 'Back to the event', chooseKind: 'Choose kind', next: 'Next', alreadyChosen: 'Already chosen this month',
+    kindHint: 'Spend one extra draw to choose the kind of the next card', endMonth: 'End month', finishYear: 'Finish the year',
+    tapFlip: 'Tap to flip · choose below', swipeDraw: 'Swipe up to draw · left for your cards', noDraws: 'No draws left',
+    impact: 'Impact {n} of 5', cannotAfford: 'You cannot afford this', tapStory: 'Tap the picture for the story',
+    keepInTouch: 'Keep in touch.', letGo: 'Let go.', acquire: 'Acquire.', decline: 'Decline.', opinionOfYou: 'Opinion of you',
+    associates: 'Associates', contacts: 'Contacts', possession: 'Possession', drawLeft: 'draw left', drawsLeft: 'draws left',
+    endToGoOn: 'End the month to go on', drawA: 'Draw a {kind}', drawBtn: 'Draw', decemberEnds: 'December ends',
+    cardsPlayed: '{n} cards played', traits: 'Traits', saveStory: 'Save the story', newGame: 'New game', nothingHere: 'Nothing here yet',
+    yourBlock: 'Your block', storySoFar: 'The story so far', nothingYet: 'Nothing has happened yet.',
+    kindTitle: 'Choose the kind of the next card', kindCost: 'Costs one extra draw. Once a month.', cancel: 'Cancel',
+    aboutCards: '{n} cards loaded. The game is a log that is only appended to; it stays in this browser until you save it.',
+    testCards: 'Test cards. ', saveLog: 'Save the story (download the log)', loadLog: 'Load a saved story', language: 'Language',
+    confirmNew: 'Start a new game? The current story stays only if you saved it.', close: 'Close',
+    chooseFirst: 'Choose an option first', noDrawsEnd: 'No draws left – end the month', nothingToDraw: 'Nothing left to draw this month',
+    newMonth: 'A new month.', storyLoaded: 'Story loaded.', saved: 'Saved', loaded: 'Loaded', couldNotLoad: 'Could not load: ',
+    keptInTouch: 'Kept in touch with {name}.', acquired: 'Acquired {name}.', let: 'Let {name} go.',
+    now: 'now {t}', noLonger: 'no longer {t}', got: 'got {name}', newContact: 'new contact {name}', nowContact: '{name} is now a contact',
+    opened: 'opened {s}', closed: 'closed {s}', testBanner: 'Test cards – not the game’s cards yet',
+    likes: 'likes you', despises: 'despises you', distrusts: 'distrusts you', neutral: 'neutral',
+    earlierChoice: 'earlier choice', until: 'until', replaces: '{a} replaces {b}', pushesOut: '{a} came, {b} went (three traits at most)', install: 'Add to home screen: share → “Add to Home Screen”.',
+    kinds: { event: 'event', person: 'person', possession: 'possession', character: 'character' },
+    roles: { Associate: 'Associate', Contact: 'Contact', Person: 'Person', Character: 'Character' },
+    reach: { global: 'global', personal: 'personal' },
+    sections: ['Character', 'Associates', 'Contacts', 'Possessions', 'Environment'],
+    values: { economic: 'Economic', military: 'Military', cultural: 'Cultural', technological: 'Technological' },
+  },
+  de: {
+    p3: 'Prototyp 3', p4: 'Prototyp 4', aiMissed: 'deine KI hat eine Woche verpasst', goal: 'Ziel', goalToday: 'Ziel des Tages', goalReached: 'Ziel erreicht', goalMissed: 'Ziel verfehlt',
+    out_success: 'geschafft', out_partial: 'teilweise', out_failure: 'gescheitert', oddsLikely: 'wahrscheinlich', oddsEven: 'offen', oddsLong: 'unwahrscheinlich',
+    learned: '{who} hat gelernt: {skill} {from} → {to}', noRoom: '{who}: kein Platz für {t} (höchstens drei Züge)',
+    takeIntoTeam: '{name} ins Team holen',
+    whoProf: 'dein/e {p}', awayTil: 'weg bis Wo {week}', noRes: 'keine Kraft', nobodyInTeam: 'kein/e {p} im Team',
+    youAwayShort: 'Weg bis Woche {week} · {place} · {title}',
+    youAway: 'Du bist weg bis Woche {week}: „{title}“, {place}. Dein Team kann weiter handeln.', sureAway: '{who} ist weg bis Woche {week}. Los?',
+    intoTeamNow: 'Ins Team',
+    dismiss: 'Zu den Kontakten', dismissed: '{name} ist wieder Kontakt', recruit: 'Ins Team · {n} Einfluss', recruited: '{name} kommt in Woche {week}',
+    teamFull: 'Team voll (3)', needInfluence: 'braucht {n} Einfluss', seats: '{n} von {max} Plätzen', joinsIn: 'kommt in Woche {week}',
+    teamHint: 'Hol einen Kontakt ins Team: {n} Einfluss, ab nächster Woche da. Schick jemanden zurück zu den Kontakten, wann immer er nicht unterwegs ist.',
+    happening: 'Jetzt geschieht',
+    aiTitle: 'Deine KI – der Autor', aiConnected: 'verbunden', aiOwn: 'deine KI schreibt', aiNone: 'Regeln schreiben · KI verbinden',
+    aiIntro: 'Verbinde deine eigene KI, dann schreibt sie deine Wochen aus dem, was du getan hast. Ohne KI schreiben Regeln die Woche.',
+    aiPrivacy: 'Dein Schlüssel bleibt verschlüsselt auf diesem Gerät und geht nur an den Anbieter, den du gewählt hast. Kosten, falls welche, laufen zwischen dir und deinem Anbieter.',
+    aiOther: 'Anderer', aiOrSignIn: 'Mit OpenRouter anmelden', aiOrNote: 'Du gehst zu OpenRouter und kommst mit einem eigenen Schlüssel zurück. Das Konto ist kostenlos, kostenlose Modelle kosten nichts.',
+    aiModelFree: 'Modell (kostenlose zuerst)', aiLoadingModels: 'Lade Modelle…', aiTest: 'Testen', aiRemove: 'Schlüssel entfernen', aiRemoved: 'Schlüssel entfernt.',
+    aiGetKey: 'Schlüssel bei {name} holen', aiLocalNote: 'Läuft auf deinem Rechner, kein Schlüssel. Anfragen von {origin} erlauben (Ollama: OLLAMA_ORIGINS).',
+    aiAddress: 'Adresse', aiModel: 'Modell', aiKey: 'Schlüssel', aiKeySaved: '•••• gespeichert', aiKeyNone: 'kein Schlüssel nötig', aiSaveTest: 'Speichern und testen',
+    aiTesting: 'Frage deine KI…', aiCancelled: 'Abgebrochen.', aiUnreachable: 'Nicht erreichbar – Adresse prüfen; lokale Dienste müssen Anfragen aus dem Browser erlauben (CORS).',
+    aiKeyRejected: 'Schlüssel abgelehnt – prüfen oder neu verbinden.', aiQuota: 'Dein KI-Kontingent ist gerade ausgeschöpft.', aiNoCredit: 'Kein Guthaben mehr beim Anbieter – wähle ein kostenloses Modell.',
+    aiUseRules: 'Diese Woche Regeln', aiFellBack: 'Regeln schrieben die Woche: ', aiSlow: 'deine KI brauchte zu lange', aiNoCards: 'deine KI schickte keine Karten',
+    orConnected: 'OpenRouter verbunden', orFailed: 'OpenRouter-Anmeldung fehlgeschlagen', orMismatch: 'OpenRouter-Anmeldung passt nicht – neu verbinden',
+    p2: 'Prototyp 2', week: 'Woche', weekShort: 'Wo', monthNames: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
+    pickCharacter: 'Wähle, wer du bist', authorWriting: 'Der Autor schreibt die Woche…', nAway: '{n} unterwegs', allHome: 'Alle sind da',
+    nextWeek: 'Nächste Woche', whoAreYou: 'Wer bist du?', home: 'Zuhause', noTime: 'keine Zeit', oneWeek: '1 Woche', nWeeks: '{n} Wochen',
+    whoSelf: 'nur du', whoAnyone: 'du oder dein Team', whoPair: 'du + eine/r aus dem Team', resource: 'Kraft', tab_board: 'Brett', tab_team: 'Team', tab_story: 'Geschichte',
+    boardEmpty: 'Nichts auf dem Brett. „Nächste Woche“ drücken.', forYou: 'Für dich', travelWeek: '+1 Woche Reise', oneResource: '1 Kraft',
+    noResource: 'keine Kraft', new: 'neu', byAuthor: 'vom Autor geschrieben', lastWeek: 'letzte Woche', weeksLeft: 'noch {n} Wochen',
+    nobodyFree: 'niemand frei', letPass: 'Vorbeiziehen lassen', isGone: '{who} weg bis Woche {week}', you: 'du', atPlace: 'in {place}',
+    onUntil: '„{title}“ bis Woche {week}', free: 'frei', yourTeam: 'Dein Team', possessions: 'Besitz', character: 'Charakter',
+    whoGoes: 'Wer geht?', backIn: 'zurück in Woche {week}', incTravel: 'inkl. Reise', rightNow: 'sofort', isAway: 'unterwegs',
+    noResourceLeft: 'keine Kraft mehr', aboutP2: 'Zeitfluss: Wochen, deine Leute, ein offenes Brett. {n} Karten. Autor: {author}.',
+    authorRules: 'Regeln (noch keine KI)', toP1: 'Prototyp 1 (Monate)', toHub: 'Alle Prototypen', ifSuccess: 'wenn es klappt:', bestChance: 'beste Chance', teamFullSwap: 'Team voll – wähle, wer geht', swapTitle: 'Wer macht Platz für {name}?', swapHint: 'Wer geht, bleibt Kontakt.', letGoName: '{name} gehen lassen', thrEndedWith: 'endete mit: {ending}', aiAuthorTest: 'Autor testen', aiAuthorTesting: 'Der Autor schreibt … (bis zu 3 Minuten)', aiAuthorTestOk: 'lesbar – {n} Karten', aiTestNeedsGame: 'erst ein Spiel beginnen – der Test nimmt dessen Stand', chars: 'Zeichen', aiSalvaged: 'aus abgeschnittener Antwort gerettet', aiUnreadable: 'Antwort nicht lesbar (aiNoCards)', travelShort: 'Reise', threadWord: 'Faden', part_opens: 'öffnet', part_continues: 'geht weiter', part_turns: 'Wendung', part_closes: 'schließt', thrDue: 'fällig – seine nächste Karte kommt', thrClosedIn: 'geschlossen in Woche {week}', thrEndings: 'Wie er enden kann', thrTaken: 'Genommene Karten', tab_people: 'Personen', household: 'Haushalt', mate: 'Partner/in', child: 'Kind', ageN: '{n} Jahre', backFrom: 'zurück aus {place}', swapCost: 'Kostet {n} Einfluss (du hast {have})', swapped: '{out} geht zurück zu den Kontakten, {name} kommt in Woche {week}', aiWritingWeek: 'schreibt Woche {n} …', aiReadyWeek: 'Woche {n} liegt bereit', view_weeks: 'Wochen', view_threads: 'Fäden', noThreads: 'Noch kein Faden – nimm eine Karte, dann beginnt ihr Faden.', weaveHint: 'Tipp auf einen Knoten.', thrClosed: 'geschlossen', thrFaded: 'verblasst', thrOpen: 'offen, {n} genommen', thrMet: 'gesehen', nextYearTitle: 'Jahr {n}', nextYear: 'Nächstes Jahr', yearN: 'Jahr {n}', out_strong: 'starker Erfolg', vs: 'gegen', advantage: 'Vorteil', disadvantage: 'Nachteil', fumble: 'eine natürliche 1', pushRoll: 'Nachlegen – eine Energie von {who}', rollGo: 'Weiter', pushedFrom: 'nachgelegt, zuerst {out}', level: 'Stufe', help: 'Hilfe', profession: 'Beruf', storyLine: 'Geschichte', goalThisYear: 'Dein Ziel dieses Jahr:', goalGo: 'Das Jahr beginnen', goalDone: 'erreicht', goalNotYet: 'noch nicht',
+    measure_money: 'Geld', measure_influence: 'Einfluss', measure_possessions: 'Dinge, die dir gehören', measure_contacts: 'Kontakte', measure_team: 'Dein Team (mit dir)', measure_personal: 'Persönliche Karten gespielt',
+    measureHow_money: 'Steigt mit Karten, die zahlen, sinkt mit dem, was du ausgibst.', measureHow_influence: 'Steigt mit Karten, die Leute gewinnen, sinkt, wenn du ihn einsetzt (Kontakte, Team).',
+    measureHow_status: 'Ansehen in deinem Block: steigt, wenn du für den Block handelst, sinkt, wenn du gegen ihn Geld nimmst.', measureHow_possessions: 'Steigt, wenn du etwas erwirbst (eine Karte mit einem Ding: behalten).',
+    measureHow_contacts: 'Steigt, wenn du eine Person als Kontakt behältst.', measureHow_team: 'Du und deine Vertrauten; hol einen Kontakt ins Team.', measureHow_personal: 'Jede Karte aus „Für dich“, die du nimmst, zählt.',
+    measureHow_flag: 'Kommt aus einer Entscheidung in der Geschichte – du erkennst sie, wenn du sie siehst.', isBack: '{who} zurück von „{title}“', weekStarts: 'Woche {n}',
+    fbQuestion: 'Hat dir die Karte gefallen?', fbUp: 'Gute Karte', fbDown: 'Schlechte Karte', fbSayMore: 'Mehr sagen (freiwillig)',
+    fbThanks: 'Danke', fbVoted: 'du hast diese Karte bewertet', fbWait: 'Einen Moment noch.', fbEnough: 'Heute ist genug gesammelt.',
+    fbFailed: 'Das hat nicht geklappt.', fbOffline: 'Keine Verbindung – später nochmal.', cardsVersion: 'Karten {v}',
+    month: 'Monat', of: 'von', draw: 'Zug', draws: 'Züge', money: 'Geld', influence: 'Einfluss', status: 'Status',
+    menu: 'Menü', play: 'Spielen', swipeChoose: 'Hoch oder runter wischen zum Wählen', yearOver: 'Das Jahr ist vorbei',
+    backToEvent: 'Zurück zum Ereignis', chooseKind: 'Art wählen', next: 'Nächste', alreadyChosen: 'Diesen Monat schon gewählt',
+    kindHint: 'Ein Zug extra, um die Art der nächsten Karte zu wählen', endMonth: 'Monat beenden', finishYear: 'Jahr beenden',
+    tapFlip: 'Tippen = umdrehen · unten wählen', swipeDraw: 'Hoch wischen = ziehen · links deine Karten', noDraws: 'Keine Züge mehr',
+    impact: 'Tragweite {n} von 5', cannotAfford: 'Das kannst du dir nicht leisten', tapStory: 'Aufs Bild tippen für die Geschichte',
+    keepInTouch: 'Kontakt halten.', letGo: 'Ziehen lassen.', acquire: 'Übernehmen.', decline: 'Ablehnen.', opinionOfYou: 'Meinung über dich',
+    associates: 'Vertraute', contacts: 'Kontakte', possession: 'Besitz', drawLeft: 'Zug übrig', drawsLeft: 'Züge übrig',
+    endToGoOn: 'Monat beenden, um weiterzuspielen', drawA: '{kind} ziehen', drawBtn: 'Ziehen', decemberEnds: 'Der Dezember endet',
+    cardsPlayed: '{n} Karten gespielt', traits: 'Züge', saveStory: 'Geschichte sichern', newGame: 'Neues Spiel', nothingHere: 'Hier ist noch nichts',
+    yourBlock: 'Dein Block', storySoFar: 'Die Geschichte bisher', nothingYet: 'Noch ist nichts passiert.',
+    kindTitle: 'Art der nächsten Karte wählen', kindCost: 'Kostet einen Zug extra. Einmal im Monat.', cancel: 'Abbrechen',
+    aboutCards: '{n} Karten geladen. Das Spiel ist ein Logbuch, an das nur angehängt wird; es bleibt in diesem Browser, bis du es sicherst.',
+    testCards: 'Testkarten. ', saveLog: 'Geschichte sichern (Log herunterladen)', loadLog: 'Gesicherte Geschichte laden', language: 'Sprache',
+    confirmNew: 'Neues Spiel beginnen? Die aktuelle Geschichte bleibt nur, wenn du sie gesichert hast.', close: 'Schließen',
+    chooseFirst: 'Erst eine Option wählen', noDrawsEnd: 'Keine Züge mehr – Monat beenden', nothingToDraw: 'Diesen Monat ist nichts mehr zu ziehen',
+    newMonth: 'Ein neuer Monat.', storyLoaded: 'Geschichte geladen.', saved: 'Gesichert', loaded: 'Geladen', couldNotLoad: 'Konnte nicht laden: ',
+    keptInTouch: 'Kontakt zu {name} gehalten.', acquired: '{name} übernommen.', let: '{name} ziehen lassen.',
+    now: 'jetzt {t}', noLonger: 'nicht mehr {t}', got: '{name} erhalten', newContact: 'neuer Kontakt {name}', nowContact: '{name} ist jetzt Kontakt',
+    opened: '{s} geöffnet', closed: '{s} geschlossen', testBanner: 'Testkarten – noch nicht die Karten des Spiels',
+    likes: 'mag dich', despises: 'verachtet dich', distrusts: 'misstraut dir', neutral: 'neutral',
+    earlierChoice: 'frühere Wahl', until: 'bis', replaces: '{a} ersetzt {b}', pushesOut: '{a} kam, {b} ging (höchstens drei Züge)', install: 'Zum Startbildschirm: Teilen → „Zum Home-Bildschirm“.',
+    kinds: { event: 'Ereignis', person: 'Person', possession: 'Besitz', character: 'Charakter' },
+    roles: { Associate: 'Vertraute/r', Contact: 'Kontakt', Person: 'Person', Character: 'Charakter' },
+    reach: { global: 'global', personal: 'persönlich' },
+    sections: ['Charakter', 'Vertraute', 'Kontakte', 'Besitz', 'Umfeld'],
+    values: { economic: 'Wirtschaft', military: 'Militär', cultural: 'Kultur', technological: 'Technik' },
+  },
+};
+// game vocabulary (ids → words); unknown ids fall back to the id, nicely spaced
+const VOCAB = {
+  de: {
+    skills: { persuasion: 'Überzeugen', deception: 'Täuschen', intimidation: 'Einschüchtern', insight: 'Menschenkenntnis', performance: 'Auftreten',
+      languages: 'Sprachen', stealth: 'Heimlichkeit', 'sleight-of-hand': 'Fingerfertigkeit', athletics: 'Athletik', survival: 'Überleben',
+      perception: 'Wahrnehmung', technology: 'Technik', medicine: 'Medizin', science: 'Wissenschaft', history: 'Geschichte',
+      investigation: 'Recherche', religion: 'Religion', finance: 'Finanzen' },
+    traits: { brave: 'mutig', craven: 'feige', honest: 'ehrlich', cunning: 'gerissen', gregarious: 'gesellig', shy: 'scheu', wise: 'weise',
+      suspicious: 'misstrauisch', faithful: 'gläubig', wrathful: 'zornig', opportunistic: 'opportunistisch', scarred: 'gezeichnet', wanted: 'gesucht',
+      'burned-out': 'ausgebrannt', parent: 'Elternteil',
+      ambitious: 'ehrgeizig', content: 'zufrieden', generous: 'großzügig', greedy: 'gierig', patient: 'geduldig', impatient: 'ungeduldig',
+      trusting: 'vertrauensvoll', distrustful: 'misstrauisch', just: 'gerecht', arbitrary: 'willkürlich', devout: 'gläubig', cynical: 'zynisch',
+      calm: 'ruhig', 'hot-tempered': 'hitzig', compassionate: 'mitfühlend', cruel: 'grausam', curious: 'neugierig', indifferent: 'gleichgültig',
+      loyal: 'loyal', opportunist: 'opportunistisch', innovator: 'Erneuerer', preserver: 'Bewahrer', globalist: 'Globalist', patriot: 'Patriot',
+      famous: 'berühmt', infamous: 'berüchtigt', married: 'verheiratet', indebted: 'verschuldet', murderer: 'Mörder', olympian: 'Olympionike',
+      diplomatic: 'diplomatisch', federal: 'föderal', militaristic: 'militaristisch', economic: 'wirtschaftlich', scientific: 'wissenschaftlich',
+      young: 'jung', old: 'alt', religious: 'religiös', authoritarian: 'autoritär', democratic: 'demokratisch', rich: 'reich', poor: 'arm' },
+    blocks: { usa: 'USA', europe: 'Europa', russia: 'Russland', china: 'China', india: 'Indien' },
+    stacks: { 'the-last-boom': 'Der letzte Boom', personal: 'Persönlich', 'the-signal': 'Das Signal' },
+    professions: { journalist: 'Journalistin/Journalist', engineer: 'Ingenieur/in', officer: 'Offizier/in', spy: 'Spion/in', doctor: 'Ärztin/Arzt',
+      pilot: 'Pilot/in', lawyer: 'Anwältin/Anwalt', artist: 'Künstler/in', hacker: 'Hacker/in', zealot: 'Eiferer/in', scientist: 'Wissenschaftler/in',
+      logistician: 'Logistiker/in', politician: 'Politiker/in', trader: 'Händler/in', farmer: 'Landwirt/in', teacher: 'Lehrer/in', nurse: 'Pflegekraft',
+      soldier: 'Soldat/in', priest: 'Priester/in', banker: 'Banker/in', worker: 'Arbeiter/in', student: 'Student/in', manager: 'Manager/in',
+      lobbyist: 'Lobbyist/in', foreman: 'Vorarbeiter/in', minister: 'Minister/in', editor: 'Redakteur/in', investor: 'Investor/in',
+      businessperson: 'Unternehmer/in', activist: 'Aktivist/in', official: 'Beamter/Beamtin', union: 'Gewerkschafter/in', 'union-leader': 'Gewerkschaftsführer/in' },
+    types: { estate: 'Anwesen', factory: 'Fabrik', vehicle: 'Fahrzeug', cultural: 'Kulturgut', business: 'Geschäft', airfield: 'Flugplatz', gallery: 'Galerie', farm: 'Hof', servers: 'Server', energy: 'Energie' },
+  },
+};
+function T(key, vars) {
+  const d = UI[LANG] || UI.en; let v = d[key] != null ? d[key] : UI.en[key]; if (v == null) return key;
+  if (typeof v === 'string' && vars) Object.keys(vars).forEach((k) => { v = v.replace('{' + k + '}', vars[k]); });
+  return v;
+}
+function word(group, id) {
+  const g = LANG !== 'en' && VOCAB[LANG] && VOCAB[LANG][group];
+  if (g && g[id]) return g[id];
+  if (group === 'blocks') return { usa: 'USA', europe: 'Europe', russia: 'Russia', china: 'China', india: 'India' }[id] || id;
+  const s = String(id).replace(/-/g, ' '); return s ? s[0].toUpperCase() + s.slice(1) : '';
+}
+// card texts in the current language, English as fallback
+function cardTitle(c) { return (LANG === 'de' && c.title_de) || c.title; }
+function cardBack(c) { return (LANG === 'de' && c.back_de) || c.back; }
+function optText(o) { return (LANG === 'de' && o.text_de) || o.text; }
+function sectionName(i) { return T('sections')[i]; }

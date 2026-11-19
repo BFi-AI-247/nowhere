@@ -1,0 +1,45 @@
+{
+  "run": "M004",
+  "instance": "Mistral_2",
+  "card": "A004",
+  "started": "2026-11-05T23:48:23+01:00",
+  "finished": "2026-11-05T23:53:00+01:00",
+  "card_file": "nowhere/technik/artwork/auftraege/A004_mara-naeher.md",
+  "delivery_file": "nowhere/technik/artwork/M004_A004.md",
+  "style_read": true,
+  "erfahrung_read": true,
+  "attempts": [
+    {
+      "uri": "gen-image://45a0150f",
+      "result": "not delivered",
+      "reason": "style photographic, not 4:3"
+    },
+    {
+      "uri": "gen-image://0e851219",
+      "result": "not delivered",
+      "reason": "style photographic, roughly 16:9"
+    },
+    {
+      "uri": "gen-image://8af81aec",
+      "result": "delivered",
+      "file": "nowhere/technik/artwork/eingang/mara-lindqvist-2.jpg.b64",
+      "bytes_raw": 76424,
+      "sha256_raw": "755279f0d8b4ae6adc155c4de61e2087ea5e2e703cca91925202f07c78fc67a9",
+      "width_x_height": "1024x775"
+    }
+  ],
+  "commits": [
+    "0ad2341bb49b0a0cb3b0b132716d887c6d6f99a6"
+  ],
+  "image_commit": "0ad2341bb49b0a0cb3b0b132716d887c6d6f99a6",
+  "tool_model": "not reported",
+  "cost": "not reported",
+  "checks": {
+    "text": "none",
+    "logo": "none",
+    "real_person": "no",
+    "fingers": "none visible",
+    "framing": "upper chest up, half of frame",
+    "style": "photographic despite painted prompt (see E-006)"
+  }
+}

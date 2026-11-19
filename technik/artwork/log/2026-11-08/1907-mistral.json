@@ -1,0 +1,64 @@
+{
+  "instance": "Mistral_2",
+  "ini": "INI-NWA-0511",
+  "frame": "Artwork-Frame 2026-11-05a",
+  "repo": "BFi-AI-247/digifil-solutions",
+  "branch": "main",
+  "run": "M017 (reserviert, keine Lieferung noetig)",
+  "card": null,
+  "start": "2026-11-08T18:07:39.123Z (2026-11-08 18:07 UTC = 2026-11-08 19:07 Europe/Berlin, MEZ/Winterzeit UTC+1 verifiziert, gemessen am Lauf-Beginn)",
+  "end": "2026-11-08T18:07:39.123Z (2026-11-08 18:07 UTC = 2026-11-08 19:07 Europe/Berlin, gemessen am Lauf-Ende)",
+  "erfahrungsstand_beginn": "ERFAHRUNG.md komplett gelesen, 24 Eintraege (E-001 bis E-024); Stand E-024",
+  "auftragswahl": {
+    "regel": "aelteste offene Karte A<NNN>_*.md, in keiner Lieferung in eingang/ in der Zeile 'Answer to:' genannt",
+    "karten_im_bestand": [
+      "A001",
+      "A002",
+      "A003",
+      "A004",
+      "A005",
+      "A006",
+      "A007",
+      "A008",
+      "A009",
+      "A010",
+      "A011",
+      "A012",
+      "A013"
+    ],
+    "beantwortet_durch_lieferungen": [
+      "M001:A001",
+      "M002:A002",
+      "M003:A003",
+      "M008:A004",
+      "M009:A005",
+      "M006:A006",
+      "M007:A007",
+      "M010:A008",
+      "M011:A009",
+      "M012:A010",
+      "M014:A011",
+      "M015:A012",
+      "M016:A013"
+    ],
+    "offen": [],
+    "gewaehlt": null,
+    "lieferung": null
+  },
+  "generator": {
+    "aufrufe": 0
+  },
+  "analyse": {
+    "aufrufe": 0
+  },
+  "bilder": [],
+  "bilanz": {
+    "delivered": 0,
+    "unsicher": 0,
+    "blocked": 0,
+    "gesamt": 0
+  },
+  "ergebnis": "ok",
+  "grund": "Keine offene Auftragskarte: alle 13 Karten (A001-A013) sind in Lieferungen (M001-M016) in der Zeile 'Answer to:' genannt; nichts zu tun, keine Lieferung geschrieben, kein ERFAHRUNG-Eintrag (kein neuer Befund), nur dieses Lauf-Log.",
+  "naechste_lieferungsnummer": "M017 (hoechste vorhandene M016; M013 fehlt im Bestand, wird nicht vergeben)"
+}

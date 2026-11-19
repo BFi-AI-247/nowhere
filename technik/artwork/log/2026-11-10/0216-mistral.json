@@ -1,0 +1,24 @@
+{
+  "instance": "Mistral_2",
+  "ini": "INI-NWA-0511",
+  "frame": "Artwork-Frame 2026-11-05a",
+  "run": "M018",
+  "repo": "BFi-AI-247/digifil-solutions",
+  "branch": "main",
+  "time": "2026-11-10T01:16:11.726Z",
+  "erfahrungsstand_begin": "E-001 bis E-028 (28 Eintraege, komplett gelesen)",
+  "auftrag": "Karte A015_niklas-berg.md (aelteste offene Karte; A001-A014 alle beantwortet): Niklas Berg, ein Charakterbild, komplett neu aus dem Karten-Prompt",
+  "tool": "image_generation.generate_image; Pruefung uploads.analyze_image; SOF0-Messung per JS-Base64-Decoder",
+  "delivered": 0,
+  "unsicher": 1,
+  "blocked": 0,
+  "quota_events": 0,
+  "details": "niklas-berg-1.jpg.b64: Prompt EXAKT aus der Karte; Pruefung kein Text/Logo/Flagge/keine reale Person; sichtbare wohlgeformte Haende/Finger trotz Prompt 'hands tucked out of sight' (R-06-Folgeversuch mit identischem Prompt zeigte dieselbe Abweichung, nicht committet), Status unsicher; exakt 1184x896 (4:3 Landschaft, SOF0-gemessen; Portrait-Lesart des Analyse-Modells war Fehlschaetzung, s. E-017); 332139 Bytes Roh-JPEG, md5 5cd4c13851f6f73d3a92e7d12f328512; Stil fotografisch statt gemalt (E-006, 10. Paket in Folge; Karte sagt explizit: kein Mangel); Vollverifikation repo=lokal md5-identisch (E-022).",
+  "commits": [
+    "17fdb0b (niklas-berg-1.jpg.b64)",
+    "e3d726f (M018_A015.md)",
+    "2d46a44 (Korrektur Tippfehler)",
+    "e677eeb (Korrektur Groesse)",
+    "dieser Commit (Log, E-029)"
+  ]
+}

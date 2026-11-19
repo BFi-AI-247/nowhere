@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F4F1EA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14161A" media="(prefers-color-scheme: dark)">
+<meta name="nowhere-feedback" content="../feedback.php">
+<title>Nowhere · Prototype 2</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Nowhere 2">
+<link rel="stylesheet" href="../app.css">
+<link rel="stylesheet" href="board.css">
+</head>
+<body>
+<div id="app" class="app"><noscript><p style="padding:24px">Nowhere needs JavaScript.</p></noscript></div>
+<!-- Prototype 2 (time flow). Classic scripts, one shared namespace, no build step; load order matters. -->
+<script src="../engine.js"></script>
+<script src="../i18n.js"></script>
+<script src="../picture.js"></script>
+<script src="../feedback.js"></script>
+<script src="week.js"></script>
+<script src="ai.js"></script>
+<script src="board.js"></script>
+</body>
+</html>

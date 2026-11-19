@@ -1,0 +1,31 @@
+{
+  "instance": "Mistral_2",
+  "ini": "INI-NWA-0511",
+  "frame": "Artwork-Frame 2026-11-05a",
+  "run": "M019",
+  "repo": "BFi-AI-247/digifil-solutions",
+  "branch": "main",
+  "time": "2026-11-10T10:10:38.046Z",
+  "erfahrungsstand_begin": "E-001 bis E-029 (29 Eintraege, komplett gelesen)",
+  "auftrag": "Karte A016_paket-10.md: zehn Bilder (rosa-almeida, li-na, daniel-ross, the-array, a-call-from-the-plateau, a-share-in-the-array, a-child, a-startup-wants-you, a-tempting-offer, arjun-asks-a-favour), Betreiber-Wort 10.11. 11:02",
+  "tool": "image_generation.generate_image; Pruefung uploads.analyze_image; SOF0-Messung per JS-Base64-Decoder",
+  "delivered": 5,
+  "unsicher": 5,
+  "blocked": 0,
+  "quota_events": 0,
+  "details": "10 Generator-Aufrufe (ein Versuch je Bild, keine Regeneration), 0 Kontingent-Ereignisse, 0 stille leere Ergebnisse. Alle 10 exakt 1184x896 (4:3, SOF0-gemessen), alle fotografisch statt gemalt (E-006, 11. Paket in Folge, je Bild dokumentiert). unsicher: rosa-almeida-1 und li-na-1 (sichtbare wohlgeformte Haende trotz 'hands out of frame', E-004, laut Karte nicht der Rede wert), a-child-1 (zentrales Kartenelement fehlt: kein weisser Plastik-Stab auf der Beckenkante), a-startup-wants-you-1 (Gesichter einander zugewandt statt abgewandt; sichtbare Finger), a-tempting-offer-1 (zweiter leerer Stuhl fehlt). delivered: daniel-ross-1, the-array-1, a-call-from-the-plateau-1, a-share-in-the-array-1, arjun-asks-a-favour-1. edit_image -1b-Option (painted Re-Render) nicht ausgefuehrt, Kontingent-Priorisierung, als Option dokumentiert. Eigenfehler im Lauf: rosa-almeida-Analyse-Rueckgabe ging beim ersten Aufruf durch cut-Abbruch verloren (cut in dieser Umgebung unbrauchbar, E-025-Fehlerklasse) und wurde einmalig schadlos wiederholt; cut durch head -c ersetzt.",
+  "commits": [
+    "c806bd1 rosa-almeida-1.jpg.b64",
+    "6a45ed42 li-na-1.jpg.b64",
+    "3303615 daniel-ross-1.jpg.b64",
+    "e5c02f1 the-array-1.jpg.b64",
+    "ecb7cda a-call-from-the-plateau-1.jpg.b64",
+    "b49c489 a-share-in-the-array-1.jpg.b64",
+    "6fcde46 a-child-1.jpg.b64",
+    "8ba8ef1 a-startup-wants-you-1.jpg.b64",
+    "30c605e a-tempting-offer-1.jpg.b64",
+    "02c30df arjun-asks-a-favour-1.jpg.b64",
+    "979ea1e M019_A016.md",
+    "dieser Commit (Log, E-030)"
+  ]
+}

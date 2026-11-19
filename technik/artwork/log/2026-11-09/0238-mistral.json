@@ -1,0 +1,27 @@
+{
+  "instance": "Mistral_2",
+  "ini": "INI-NWA-0511",
+  "frame": "Artwork-Frame 2026-11-05a",
+  "run": "M017",
+  "answer_to": "A014",
+  "repo": "BFi-AI-247/digifil-solutions",
+  "branch": "main",
+  "start_time": "2026-11-09T01:38:38.733Z",
+  "start_time_berlin": "2026-11-09 02:38:38 MEZ",
+  "erfahrungsstand_begin": "E-001 bis E-024 (24 Eintraege)",
+  "card": "A014_paket-9.md",
+  "motive_total": 20,
+  "delivered": 1,
+  "unsicher": 0,
+  "blocked": 19,
+  "quota_events": {
+    "silent_empty": 2,
+    "explicit_429": 0
+  },
+  "generator_calls": 3,
+  "details": "Motiv 1 (a-seat-to-listen) generiert, geprueft (kein Text/Logo/Flagge/Person, keine Haende, Stil fotografisch s. E-006), SOF0-gemessen 1184x896, 368515 Bytes, md5 5f30defa5775bcd3dc9c7d931ad2d233, Commit 2788ebd als a-seat-to-listen-1.jpg.b64. Motiv 2 (what-you-heard-up-there): 2 stille leere Generator-Ergebnisse ohne Fehlertext (R-04-Signal), danach keine weiteren Aufrufe; 19 Motive blocked geliefert. Bild-Analyse-Aufrufe: 2 (Motiv 1 zweimal, da die erste Rueckgabe durch Pfad-Grenzen-Fehler des Laufs verloren ging; Befund identisch unauffaellig).",
+  "commits": [
+    "2788ebd (a-seat-to-listen-1.jpg.b64)",
+    "dieser Commit (M017_A014.md, Log, ERFAHRUNG E-025)"
+  ]
+}

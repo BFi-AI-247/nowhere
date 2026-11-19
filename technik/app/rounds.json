@@ -1,0 +1,116 @@
+{
+ "built": "2026-11-19T11:41Z",
+ "prototypes": {
+  "1": {
+   "played": [
+    {
+     "title": "Prototype 1 – first playthrough (05.11.2026, Mara Lindqvist; log replayed by Spiel_1 through engine.js)",
+     "date": "05.11.2026",
+     "character": "",
+     "file": "konzept.md"
+    },
+    {
+     "title": "Prototype 1 – second playthrough (05.11.2026, Tomas Reyes; log replayed by Spiel_1 through engine.js)",
+     "date": "05.11.2026",
+     "character": "",
+     "file": "konzept.md"
+    },
+    {
+     "title": "Prototype 1 – third playthrough (06.11.2026, 00:12–00:25, Samir Haddad; replayed by Spiel_1)",
+     "date": "06.11.2026",
+     "character": "Samir Haddad",
+     "file": "konzept.md"
+    },
+    {
+     "title": "Prototype 1 – fourth playthrough (06.11.2026, 19:09–19:20, Elena Rossi; replayed by Spiel_1)",
+     "date": "06.11.2026",
+     "character": "Elena Rossi",
+     "file": "konzept.md"
+    }
+   ],
+   "tests": {
+    "sim": 290,
+    "runs": 6,
+    "approx": true,
+    "last": "2026-11-08T18:46:06.004Z",
+    "browser": 10
+   }
+  },
+  "2": {
+   "played": [
+    {
+     "title": "First Prototype 2 playthrough (07.11.2026, 00:48–01:06, Samir; log read by Spiel_1)",
+     "date": "07.11.2026",
+     "character": "Samir",
+     "file": "konzept-zeitfluss.md"
+    },
+    {
+     "title": "Second Prototype 2 playthrough (07.11.2026, 09:42–11:50, Aisha, cards d4d42f5; log read by Spiel_1)",
+     "date": "07.11.2026",
+     "character": "Aisha",
+     "file": "konzept-zeitfluss.md"
+    },
+    {
+     "title": "Third Prototype 2 playthrough – with the AI author (07.11.2026, 12:30–16:48, Mara, cards 189c1f3, Mistral Large)",
+     "date": "07.11.2026",
+     "character": "Mara",
+     "file": "konzept-zeitfluss.md"
+    }
+   ],
+   "tests": {
+    "sim": 445,
+    "runs": 7,
+    "approx": true,
+    "last": "2026-11-08T20:07:07.685Z",
+    "browser": 12
+   }
+  },
+  "3": {
+   "played": [
+    {
+     "title": "Fourth playthrough – Prototype 3, AI author answering (07.11.2026, 19:10–21:30, Mara, cards aa3691f, no goal yet)",
+     "date": "07.11.2026",
+     "character": "Mara",
+     "file": "konzept-zeitfluss.md"
+    },
+    {
+     "title": "Fifth playthrough – Prototype 3, abandoned (07.11.2026, 22:02–22:26, Tomas, cards ee30ba0, goal \"A seat at the table\", stopped in week 20)",
+     "date": "07.11.2026",
+     "character": "Tomas",
+     "file": "konzept-zeitfluss.md"
+    }
+   ],
+   "tests": {
+    "sim": 235,
+    "runs": 16,
+    "approx": true,
+    "last": "2026-11-13T05:51:37.990Z",
+    "browser": 3,
+    "sim-mock": 60
+   }
+  },
+  "4": {
+   "played": [
+    {
+     "title": "Sixth playthrough – Prototype 4, the-last-boom, full year (08.11. 20:14 – 09.11. 18:04, Elena Rossi, cards 135cb98, goal keep-the-ninety, AI author in German)",
+     "date": "",
+     "character": "Elena Rossi",
+     "file": "konzept-zeitfluss.md"
+    },
+    {
+     "title": "Seventh playthrough – Prototype 4, the-last-boom, full year (09.11. 21:48 – 10.11. 12:22, Ray Delgado, cards 24e76bf at start, app changed to 7291c2c around week 30; goal the-year-you-lived; AI author Mistral Large, German)",
+     "date": "",
+     "character": "Ray Delgado",
+     "file": "konzept-zeitfluss.md"
+    }
+   ],
+   "tests": {
+    "sim": 444,
+    "runs": 46,
+    "last": "2026-11-15T06:26:28.965Z",
+    "sim-mock": 145,
+    "browser": 5
+   }
+  }
+ }
+}

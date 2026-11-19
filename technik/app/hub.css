@@ -1,0 +1,28 @@
+/* Nowhere – overview of the prototypes. Uses the tokens of app.css. Owner: Spiel_2. */
+body { overflow-y: auto; }
+.hub { max-width: 560px; margin: 0 auto; padding: 20px 16px 48px; }
+.hub header { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 6px; }
+.hub h1 { font-size: 30px; margin: 0; letter-spacing: .01em; }
+.hub .lang { display: flex; gap: 6px; }
+.hub .lang button { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 4px 12px; font-size: 15px; cursor: pointer; }
+.hub .lang button.on { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.hub .lead { color: var(--muted); margin: 0 0 18px; font-size: 16px; }
+.proto { display: block; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); margin: 0 0 16px; box-shadow: 0 2px 10px var(--shadow); overflow: hidden; }
+.proto > a.go { display: block; padding: 18px 18px 14px; color: inherit; text-decoration: none; }
+.proto > a.go:active { background: var(--surface2); }
+.proto .head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.proto h2 { margin: 0; font-size: 24px; }
+.proto .date { color: var(--muted); font-size: 15px; white-space: nowrap; }
+.proto .new { display: inline-block; font-size: 13px; font-weight: 600; color: var(--accent-ink); background: var(--accent); border-radius: 999px; padding: 1px 9px; margin-left: 8px; vertical-align: middle; }
+.proto p.what { margin: 8px 0 12px; color: var(--ink2); }
+.proto .open { display: inline-block; font-weight: 600; color: var(--accent); }
+.proto .running { margin-top: 6px; font-size: 16px; color: var(--ok); }
+.counts { border-top: 1px solid var(--line); padding: 12px 18px 14px; display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; font-size: 16px; }
+.counts .k { color: var(--muted); }
+.counts .v b { font-variant-numeric: tabular-nums; font-size: 18px; }
+.counts .v small { color: var(--muted); }
+.counts details { grid-column: 1 / -1; font-size: 15px; color: var(--ink2); }
+.counts details summary { cursor: pointer; color: var(--muted); }
+.counts details ul { margin: 6px 0 0; padding-left: 20px; }
+.hub footer { color: var(--muted); font-size: 14px; margin-top: 10px; }
+@media (max-width: 380px) { .counts { grid-template-columns: 1fr; gap: 2px; } .counts .k { margin-top: 6px; } }

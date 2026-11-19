@@ -1,0 +1,30 @@
+{
+  "run": "M015",
+  "instance": "Mistral_2",
+  "frame": "Artwork-Frame 2026-11-05a",
+  "answer_to": "A012",
+  "card": "A012_paket-7.md",
+  "start": "2026-11-07T21:59:00Z ca. (2026-11-07 ca. 22:59 Europe/Berlin, MEZ, gemessen zur Kartenleseung)",
+  "erfahrungsstand": "ERFAHRUNG.md E-001 bis E-022 komplett; RISIKEN.md R-01 bis R-14; STYLE.md gelesen (Kartenanweisung)",
+  "images_ordered": 10,
+  "images_generated": 8,
+  "images_delivered": 8,
+  "images_blocked": 2,
+  "generator_attempts": 12,
+  "quota_events": 4,
+  "generator_errors": 2,
+  "analysis_tool_checks": 8,
+  "quota_reset": "2026-11-07T22:29:10Z (23:29 Uhr Europe/Berlin)",
+  "findings": "8/10 im ersten Versuch geliefert (ein Motiv unsicher: sichtbare Haende, Folgeversuch durch Kontingent blockiert); 2 Motive blocked (429 nach stillen leeren Ergebnissen, R-04 bestaetigt). Pixel je Bild JPEG-Header-gemessen exakt 1184x896 (4:3). od in der Upgrade-Umgebung unbrauchbar -> SOF0-Parsing per Python/struct (E-023). run_typescript-Speichergrenze 16 MiB erzwang je Bild einen Push-Aufruf (E-023).",
+  "incident": "Kontingent-429 nach 8 gelieferten Motiven; zwei stille leere Generator-Ergebnisse gingen dem expliziten 429 voraus",
+  "commits": [
+    "e7a4e54",
+    "3da0c2b",
+    "614b9a7",
+    "9f428aa",
+    "dcedc81",
+    "e43a0a9",
+    "d1b33ed",
+    "f518a38"
+  ]
+}

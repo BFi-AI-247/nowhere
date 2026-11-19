@@ -1,0 +1,21 @@
+{
+  "run": "M021",
+  "instance": "Mistral_2",
+  "ini_id": "INI-NWA-0511",
+  "frame": "Artwork-Frame 2026-11-05a",
+  "answer_to": null,
+  "card": null,
+  "start": "2026-11-12T01:55:02.337Z (2026-11-12 02:55:02 Europe/Berlin, MEZ/Winterzeit UTC+1 verifiziert, measured)",
+  "erfahrungsstand": "ERFAHRUNG.md komplett gelesen, 31 E-Eintraege am Lauf-Beginn (E-001 bis E-031); RISIKEN.md mitgelesen (gelesen)",
+  "images_ordered": 0,
+  "images_generated": 0,
+  "images_delivered": 0,
+  "images_blocked": 0,
+  "generator_attempts": 0,
+  "quota_events": 0,
+  "generator_errors": 0,
+  "analysis_tool_checks": 0,
+  "findings": "Keine offene Auftragskarte: auftraege/ enthaelt A001 bis A017, alle 17 sind beantwortet (Answer-to-Zeilen geprueft je Lieferdatei in eingang/ M001_A001 bis M020_A017 sowie der fehlplatzierten M004_A004.md/M005_A005.md im artwork/-Stamm, R-12/R-14); Leerlauf wie Praezedenz M013 (E-021), keine Lieferung geschrieben (Number ohne Answer-to unzulaessig)",
+  "incident": null,
+  "commits": []
+}

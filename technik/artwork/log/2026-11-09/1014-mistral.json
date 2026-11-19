@@ -1,0 +1,39 @@
+{
+  "instance": "Mistral_2",
+  "ini": "INI-NWA-0511",
+  "frame": "Artwork-Frame 2026-11-05a",
+  "run": "M017",
+  "answer_to": "A014",
+  "repo": "BFi-AI-247/digifil-solutions",
+  "branch": "main",
+  "start_time": "2026-11-09T01:38:38.733Z",
+  "end_time_nachtrag2": "2026-11-09T09:14:08.451Z",
+  "end_time_berlin": "2026-11-09 10:14:08 Uhr MEZ",
+  "erfahrungsstand_begin": "E-001 bis E-024 (24 Eintraege), E-025/E-026 im Lauf angehaengt",
+  "card": "A014_paket-9.md",
+  "motive_total": 20,
+  "delivered": 20,
+  "unsicher": 0,
+  "blocked": 0,
+  "quota_events": {
+    "erstlauf": {
+      "silent_empty": 2,
+      "explicit_429": 0
+    },
+    "nachtrag1": 0,
+    "nachtrag2": 0
+  },
+  "generator_calls": 21,
+  "analysis_calls": 20,
+  "details": "Erstlauf 02:38 MEZ: 1 Motiv geliefert (a-seat-to-listen), 2 stille leere Generator-Ergebnisse, 18 blocked dokumentiert. Nachtrag 1 auf Betreiber-Anweisung 09:44 MEZ: what-you-heard-up-there geliefert (E-026). Nachtrag 2 auf Betreiber-Anweisung: alle 18 restlichen Motive in einem Zug, je Aufruf ein Bild (Generierung, Analyse, b64, Commit), 0 Kontingent-Ereignisse. Alle 20 Motive geprueft: kein Text, kein Logo, keine Flagge, keine reale Person; Haeende nur szenisch noetig und durchweg wohlgeformt; Stil durchgehend fotografisch (E-006 dokumentiert); alle 20 exakt 1184x896 (4:3). ERFAHRUNG-Lesefehler aus E-009/E-025(4) durch E-026-Werkzeug-Fund behoben (Volltext in r[1].resource.text), nach jedem Append verifiziert.",
+  "commits": [
+    "2788ebd (a-seat-to-listen-1.jpg.b64)",
+    "6c847b5 (Erstlieferung+Log+E-025, ERFAHRUNG verkuerzt)",
+    "37b91ee (ERFAHRUNG-Wiederherstellung)",
+    "f6b2164 (what-you-heard-up-there-1.jpg.b64)",
+    "0c70492 (Lieferung Nachtrag 1)",
+    "bfe4aea (E-026)",
+    "0e6b3d5/6103537/8dc90a9/f36ad78/07d0956/0bb62a1/165443b/91dfd32/194aa1d/c67e6d5/2ae8327/ee94e79/e42ccab/c205e60/3682cf5/05fffd3/a9454bf/6e4e35c (je ein Bild-Motiv)",
+    "dieser Commit (Lieferung 20/20, Log, E-027)"
+  ]
+}
