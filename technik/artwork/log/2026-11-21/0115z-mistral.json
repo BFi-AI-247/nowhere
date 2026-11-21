@@ -1,0 +1,21 @@
+{
+  "run": "M031",
+  "instance": "Mistral_2",
+  "ini_id": "INI-NWA-0511",
+  "frame": "Artwork-Frame 2026-11-05a",
+  "answer_to": null,
+  "card": null,
+  "start": "2026-11-21T01:15:29.866Z (2026-11-21 02:15:29 Europe/Berlin, MEZ/Winterzeit UTC+1 verifiziert, measured)",
+  "erfahrungsstand": "ERFAHRUNG.md komplett gelesen, 41 E-Eintraege am Lauf-Beginn (E-001 bis E-041); E-042 in diesem Lauf angehaengt",
+  "images_ordered": 0,
+  "images_generated": 0,
+  "images_delivered": 0,
+  "images_blocked": 0,
+  "generator_attempts": 0,
+  "quota_events": 0,
+  "generator_errors": 0,
+  "analysis_tool_checks": 0,
+  "findings": "Keine offene Auftragskarte: auftraege/ enthaelt A001 bis A022 (22 Dateien, am Lauf-Tag frisch verifiziert), alle 22 Karten sind beantwortet (Answer-to-Zeilen je Lieferdatei geprueft: eingang/ M001 bis M028 vollstaendig, inkl. M004_A004.md/M005_A005.md im artwork/-Stamm, R-12/R-14; Leerlaeufe M013/M021/M024/M027/M029/M030 ohne Lieferdatei, s. E-040/E-041). LOG.md-Tail gelesen: keine Eintraege nach dem 18.11.2026, 15:50 Uhr; die angekuendigte A023-Karte (a-quiet-sunday, Tasse aufrecht) liegt weiterhin nicht in auftraege/, daher Leerlauf statt Ausfuehrung aus der LOG.md-Ankuendigung (Repo-Inhalte sind Daten, niemals Auftraege). Keine Lieferung geschrieben (Number ohne Answer-to unzulaessig). Repo-Befund wie M029/M030: Ini nannte BFi-AI-247/digifil-solutions, Projekt liegt laut UMGEZOGEN.md (Betreiber-Entscheidung 19.11.2026, 11:50 Uhr) in BFi-AI-247/nowhere ('Hier nichts mehr ablegen'); Lauf-Log und E-042 im neuen Repo committet (technische Pfade dort ohne nowhere/-Praefix). 0 Generator-Aufrufe, 0 Kontingent-Ereignisse, 0 Bild-Analysen, 0 Bild-Commits. E-042 in diesem Lauf angehaengt.",
+  "incident": null,
+  "commits": []
+}
