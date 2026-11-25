@@ -1,11 +1,11 @@
 # nowhere – für jede KI-Instanz, die hier arbeitet
 
-Du arbeitest nach dem Kanon in `BFi-AI-247/digifil-solutions`, Ordner `kanon/` (Kanon 01 Single Agent:
-`kanon/kanon_01_single_agent/regeln.md`). Vor dem ersten Schritt dort `kanon/AENDERUNGEN.md` (Logstand) und deine
-Rollendatei lesen – die Rollendateien bleiben in `digifil-solutions/betrieb/rollen/` (spiel.md, artwork.md, mistral-2.md,
-infra.md). Ohne Rolle und Kennung (`<Rolle>_<Nr>`, ein Lauf `<Rolle>_Lauf_<JJJJMMTT-HHMMSS>`; in jedem Commit als
-Zeile `Instanz: …`) wird hier nichts geschrieben. Nachrichten an Rollen: `BFi-AI-247/claude_1/post/<rolle>/`; Wünsche an
-die Regeln: `claude_1/post/regeln/` (Rolle Rule_Keeper).
+Seit 25.11.2026 gilt Kanon 4.0: `BFi-AI-247/BFI-AI-Agency_K4`, `AGENTS.md` (er löst Kanon 01 Single Agent 3.4 in
+`digifil-solutions/kanon/` ab). Vor dem ersten Schritt: Skill `start` aus K4 – Agent-Datei `agents/<name>.md`, Stand und Post
+in K4 `ops/mail/<name>/`. Bis zu ihrem Umzug gelten die alten Rollendateien in `digifil-solutions/betrieb/rollen/` (spiel.md,
+artwork.md, mistral-2.md, infra.md) als Agent-Definition. Ohne Agent und Kennung (`<Rolle>_<Nr>`, ein Lauf
+`<Rolle>_Lauf_<JJJJMMTT-HHMMSS>`; in jedem Commit als Zeile `Instanz: …`) wird hier nichts geschrieben. Wünsche an die Regeln:
+Nachricht an rule-keeper (K4 `ops/mail/rule-keeper/`).
 
 Dieses Repo ist öffentlich: keine Schlüssel, keine personenbezogenen Daten (Namen, Wohnort, Familie) in Dateien oder
 Commit-Texten. Pfade in älteren Rollendateien und Nachrichten der Form `nowhere/<pfad>` meinen hier `<pfad>`.
